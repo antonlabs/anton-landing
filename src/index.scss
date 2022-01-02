@@ -1,0 +1,161 @@
+@import "palette";
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&display=swap');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+#root {
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.bg-primary {
+  background: $primary-color;
+  color: $primary-color-text;
+}
+
+.bg-danger {
+  background: $primary-danger;
+  color: $primary-color-text;
+}
+
+.bg-active {
+  background: $primary-active;
+  color: $primary-color-text;
+}
+
+.primary {
+  color: $primary-color;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  &.center {
+    justify-content: center;
+  }
+  &.end{
+    justify-content: end;
+  }
+  &.between {
+    justify-content: space-between;
+  }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  &.center {
+    justify-content: center;
+  }
+  &.end{
+    justify-content: end;
+  }
+  &.between {
+    justify-content: space-between;
+  }
+}
+
+$margins: 1em, 2em, 3em, 4em, 5em;
+$marginsPixels: 10px, 20px, 30px, 40px, 50px;
+
+@each $size in $margins {
+  .mt-#{$size} {
+    margin-top: $size;
+  }
+  .ml-#{$size} {
+    margin-left: $size;
+  }
+  .mr-#{$size} {
+    margin-right: $size;
+  }
+  .mb-#{$size} {
+    margin-bottom: $size;
+  }
+}
+
+@each $size in $marginsPixels {
+  .mt-#{$size} {
+    margin-top: $size;
+  }
+  .ml-#{$size} {
+    margin-left: $size;
+  }
+  .mr-#{$size} {
+    margin-right: $size;
+  }
+  .mb-#{$size} {
+    margin-bottom: $size;
+  }
+}
+
+a {
+  color: $primary-color-dark;
+  font-size: 15px;
+}
+
+.counter {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card-plain {
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    padding-bottom: 20px;
+    font-size: 25px;
+  }
+  h5, p {
+    color: #9f9f9f;
+  }
+  h5 {
+    font-size: 20px;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+@media(min-width: 768px){
+  .desktop-only{
+    display: block;
+  }
+  .mobile-only{
+    display: none;
+  }
+}
+.desktop-only{
+  display: none;
+}
+.mobile-only{
+  display: block;
+}
+
+.white {
+  color: #fff;
+}

@@ -1,0 +1,12 @@
+@import '../../palette';
+
+.anton-input {
+  border: none;
+  border-bottom: dashed $primary-color;
+  padding: 0;
+  font-size: 20px;
+
+  &:active, &:focus {
+    outline: none;
+  }
+}

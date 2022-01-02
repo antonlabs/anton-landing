@@ -1,0 +1,16 @@
+.wallets-stack {
+  position: relative;
+  .wallet {
+    transition: all 1s ease;
+    position: absolute;
+    width: 100%;
+    height: 300px;
+  }
+
+  &.open {
+    .wallet {
+    }
+  }
+}
+
+

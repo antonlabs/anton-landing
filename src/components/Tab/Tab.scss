@@ -1,0 +1,22 @@
+.tab {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 10px;
+  background: #eaeaea;
+  font-size: 12px;
+  cursor: pointer;
+  transition: .2s ease all;
+  &:hover, &:active {
+    background: #fff;
+  }
+  &.selected {
+    background: #fff;
+  }
+  .close {
+    font-size: 10px;
+    margin-left: 10px;
+    color: #000;
+  }
+}

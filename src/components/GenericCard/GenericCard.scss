@@ -1,0 +1,22 @@
+.anton-card {
+  color: #000;
+  background: #fff;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+
+  .header {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .content {
+    padding: 25px;
+    position: relative;
+    height: 100%;
+  }
+}

@@ -1,0 +1,17 @@
+
+.price-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+h4 {
+  display: inline-block;
+}
+
+div {
+  font-size: 20px;
+}
+
+div:first-child {
+  margin: 0;
+}

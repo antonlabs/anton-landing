@@ -1,0 +1,23 @@
+@import "../../palette";
+
+.price-tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  color: #fff;
+
+  > svg {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .flex-row {
+    svg {
+      margin-left: 0;
+      margin-top: 8px;
+      padding-right: 8px;
+      color: $primary-color;
+    }
+  }
+}

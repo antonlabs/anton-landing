@@ -1,0 +1,18 @@
+.order-type {
+  color: #fff;
+  .content {
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    min-width: 30px;
+    max-width: 50px;
+    font-size: 12px;
+    &.buy {
+      background: green;
+    }
+    &.sell {
+      background: red;
+    }
+  }
+
+}
