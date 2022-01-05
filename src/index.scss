@@ -56,6 +56,9 @@ code {
   &.between {
     justify-content: space-between;
   }
+  &.space {
+    justify-content: space-around;
+  }
 }
 
 .flex-column {

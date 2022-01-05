@@ -1,14 +1,27 @@
 import "./BezierShape.scss";
+import {useEffect} from "react";
 
 let ctx: CanvasRenderingContext2D | undefined | null;
 
-let currentMode = 0;
 const speed = 1;
 const animationFloor = 50;
 const animationMax = 200;
 
+const timeouts: {[key: string]: any} = {}
 
-const drawLine = (ctx: CanvasRenderingContext2D, color: string, points: {x: number, y: number}[]) => {
+
+const makeid = (length: number) => {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() *
+            charactersLength));
+    }
+    return result;
+}
+
+const drawLine = (id: string, ctx: CanvasRenderingContext2D, color: string, points: {x: number, y: number}[], currentMode: number = 0) => {
     ctx.fillStyle = color;
     ctx.beginPath();
     ctx.moveTo(points[0].x, points[0].y);
@@ -28,9 +41,9 @@ const drawLine = (ctx: CanvasRenderingContext2D, color: string, points: {x: numb
     ctx.lineTo(0, points[1].y);
     ctx.lineTo(points[0].x, points[0].y);
     ctx.fill();
-    setTimeout(() => {
+    timeouts[id] = setTimeout(() => {
         clear(ctx);
-        drawLine(ctx, color, points);
+        drawLine(id, ctx, color, points, currentMode);
     }, 100)
 }
 
@@ -38,7 +51,12 @@ const clear = (ctx: CanvasRenderingContext2D) => {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 }
 
-const run = (ctx: CanvasRenderingContext2D, color: string = 'white', reverse: boolean = false, height = 400) => {
+const run = (
+    id: string,
+    ctx: CanvasRenderingContext2D,
+    color: string = 'white',
+    reverse: boolean = false,
+    height = 400) => {
     if(reverse) {
         ctx.translate(0, height);
         ctx.scale(1, -1);
@@ -49,15 +67,22 @@ const run = (ctx: CanvasRenderingContext2D, color: string = 'white', reverse: bo
         {x:window.innerWidth / 2,y:200},
         {x:window.innerWidth, y:height}
     ]
-    drawLine(ctx, color, points);
+    drawLine(id, ctx, color, points);
 }
 
 export const BezierShape = (props: {color?: string, reverse?: boolean, height?: number}) => {
     const currentHeight = props.height ?? 400;
+    const id = 'canvas' + makeid(10);
+    useEffect(() => {
+        return () => {
+            clearTimeout(timeouts[id])
+            delete timeouts[id]
+        }
+    })
     return <canvas width={window.innerWidth} height={(currentHeight) + 'px'} ref={(c) => {
         ctx = c?.getContext('2d');
         if(ctx) {
-            run(ctx, props.color, props.reverse, currentHeight);
+            run(id, ctx, props.color, props.reverse, currentHeight);
         }
-    }} id='canvas' />
+    }} id={id} className={'canvas'} />
 }

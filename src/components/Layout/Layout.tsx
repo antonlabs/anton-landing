@@ -39,11 +39,7 @@ export const Layout = () => {
                 <NavLink to="settings">Settings</NavLink>
             </div> :
             <div className={'menu-items' }>
-                <NavLink to="">Home</NavLink>
-                <NavLink to="what">About</NavLink>
-                <NavLink to="squad">Team</NavLink>
-                <NavLink to="control-tower">Contacts</NavLink>
-                <Button>Subscribe</Button>
+                <Button>Book your take off</Button>
             </div>
     return (
         <>

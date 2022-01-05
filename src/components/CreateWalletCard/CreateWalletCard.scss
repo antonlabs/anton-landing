@@ -1,9 +1,19 @@
-.telegram-button {
-  background: #0088CC!important;
-  padding: 10px;
-  border: none;
-  font-size: 30px;
-  font-weight: bold;
-  margin-top: 20px;
-  border-radius: 5px;
+.anton-button.icon {
+  color: #fff;
+}
+
+.button {
+  &.telegram, &.email {
+    flex: 1;
+  }
+  &.telegram {
+    background: #0088CC!important;
+    margin-right: 10px;
+  }
+
+  &.email {
+    background: #e65100!important;
+    margin-left: 10px;
+  }
+
 }

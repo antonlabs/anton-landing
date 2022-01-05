@@ -58,7 +58,7 @@ export const login = async (username: string, pass: string): Promise<CognitoUser
         Username: username,
         Pool: cognitoUserPool
     });
-    return new Promise((resolve, reject) => {
+    return new Promise<CognitoUserSession>((resolve, reject) => {
         user.authenticateUser(new AuthenticationDetails({
             Username: username,
             Password: pass

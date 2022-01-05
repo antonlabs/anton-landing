@@ -3,11 +3,24 @@
 .footer {
   background: $primary-color-dark;
   padding: 50px;
+  padding-bottom: 10px;
+
   h3 {
     color: $primary-color;
   }
+
   a {
     color: $primary-color-text;
     margin-top: 10px;
+  }
+
+  .credits {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: row;
+    a {
+      position: relative;
+      right: 0;
+    }
   }
 }

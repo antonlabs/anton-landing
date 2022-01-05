@@ -21,5 +21,8 @@ export const Footer = () => {
                 <h3>For Developers</h3>
             </div>
         </div>
+        <div className={'credits'}>
+            <a href="https://www.freepik.com/vectors/logo">Logo vector created by catalyststuff - www.freepik.com</a>
+        </div>
     </div>
 }
