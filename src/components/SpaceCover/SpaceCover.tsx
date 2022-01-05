@@ -5,6 +5,7 @@ import {BezierShape} from "../BezierShape/BezierShape";
 import {Button} from "../Button/Button";
 import React, {useState} from "react";
 import {CreateWalletCard} from "../CreateWalletCard/CreateWalletCard";
+import {SubscriptionCard} from "../SubscriptionCard/SubscriptionCard";
 
 const particlesInit = (main: Main) => {
     main.init();
@@ -38,7 +39,7 @@ export const SpaceCover = () => {
             </div>
             <div className={'hover'}>
                 <div className={'subscribe'} style={subscribeStyle}>
-                    <CreateWalletCard cancel={() => setState(() => ({
+                    <SubscriptionCard cancel={() => setState(() => ({
                         creating: false
                     }))}/>
                 </div>

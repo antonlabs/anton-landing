@@ -65,7 +65,6 @@ export const profilesSlice = createSlice({
     name: 'profiles',
     initialState: {
         profiles: [],
-        loading: false,
         openWallets: false,
         init: false
     } as ProfilesState,

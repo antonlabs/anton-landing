@@ -138,13 +138,22 @@ export interface DeviceState {
     isMobile: boolean;
 }
 
+export interface NewsletterState {
+    error?: string;
+    pending: boolean;
+    active: boolean;
+}
+
+
 
 /*General state*/
 export interface State {
     profiles: ProfilesState;
     orders: OrdersPayload;
     tabManager: TabManagerState;
+    newsletter: NewsletterState;
     landingInfo: LandingInfo;
     device: DeviceState,
 }
+
 

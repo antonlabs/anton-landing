@@ -1,0 +1,17 @@
+.anton-card {
+  transition: .3s ease all;
+}
+
+.anton-button.icon {
+  color: #fff;
+}
+
+.buttons {
+  justify-content: center;
+
+  .button {
+    &.email {
+      background: #e65100!important;
+    }
+  }
+}

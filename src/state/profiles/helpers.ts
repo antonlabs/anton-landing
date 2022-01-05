@@ -31,7 +31,6 @@ export const editWallet = async (idToken: string, wallet: WalletModel): Promise<
 
 
 export const useDynamo = async (profile: ProfileModel, transaction: (dynamoClient: DynamoDBDocumentClient) => Promise<any>): Promise<any> => {
-
     const logins = {[`cognito-idp.${environment.region}.amazonaws.com/${environment.userPoolId}`]: profile.authDetails.IdToken!};
     const dbClient = new DynamoDBClient({
         region: environment.region,

@@ -5,6 +5,7 @@ import {State} from "./types";
 import {ordersReducer} from "./orders";
 import {tabsReducer} from "./tabs";
 import {deviceReducer} from "./device";
+import {newsletterReducer} from "./newsletter";
 
 const persistedState = localStorage.getItem('state');
 const PERSISTED_KEYS: string[] = ['profiles', 'landingInfo']
@@ -13,6 +14,7 @@ export default configureStore({
     reducer: {
         profiles: profilesReducer,
         orders: ordersReducer,
+        newsletter: newsletterReducer,
         tabManager: tabsReducer,
         device: deviceReducer
     },

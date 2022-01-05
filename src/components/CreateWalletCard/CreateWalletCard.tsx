@@ -8,13 +8,9 @@ import {Input} from "../Input/Input";
 
 const getName = (form: UseFormReturn) => form.getValues()['walletName']
 
-const telegram = (walletName: string) => {
+const telegram = (walletName: string) => {}
 
-}
-
-const email = (walletName: string) => {
-    console.log(walletName);
-}
+const email = (walletName: string) => {console.log(walletName);}
 
 export const CreateWalletCard = ({cancel, style = {}}: any) => {
     const form = useForm();
