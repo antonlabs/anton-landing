@@ -21,7 +21,7 @@ export const SpaceCover = () => {
         transform: `scale(${state.creating ? '0' : '1'})`
     }
     const subscribeStyle = {
-        marginLeft: state.creating ? '50px' : '-400px'
+        marginLeft: state.creating ? '50px' : '-100%'
     }
     return (
         <div className={'cover'}>
