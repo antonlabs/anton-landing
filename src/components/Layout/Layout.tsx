@@ -39,7 +39,7 @@ export const Layout = () => {
                 <NavLink to="settings">Settings</NavLink>
             </div> :
             <div className={'menu-items' }>
-                <Button>Book your take off</Button>
+                <Button>Keep updated</Button>
             </div>
     return (
         <>

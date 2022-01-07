@@ -33,10 +33,10 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
     // const form = useForm();
     return <GenericCard header={header} style={style}>
         <form onSubmit={form.handleSubmit((val: any) => submitForm(dispatch, val.email))}>
-            <div className={'alert'}>{newsletter.error}</div>
+            {newsletter.error ? <div className={'alert'}>{newsletter.error}</div> : <></>}
             <p>Subscribe to our newsletter to keep updated about our roadmap status and give us feedback about what you would like</p>
-            <Input placeholder={'Your email'} register={form.register('email', {required: true})} />
-            <div className={'flex-row mt-2em buttons'}>
+            <div className={'flex-row mt-2em between'}>
+                <Input placeholder={'Your email'} register={form.register('email', {required: true})} />
                 <Button extraClasses={['button email']}>
                     <MdMarkEmailRead />
                     <h6>Subscribe</h6>

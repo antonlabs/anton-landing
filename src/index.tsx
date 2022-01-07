@@ -16,6 +16,7 @@ store.subscribe(() => {
         isMobile: window.innerWidth < 700
     };
     state.orders = {};
+    delete state.newsletter.error;
     console.log(state);
     localStorage.setItem('state', JSON.stringify(state))
 })

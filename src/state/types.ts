@@ -141,7 +141,7 @@ export interface DeviceState {
 export interface NewsletterState {
     error?: string;
     pending: boolean;
-    active: boolean;
+    subscribedWith?: string;
 }
 
 
