@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@aws-sdk/client-cognito-identity-browser": "^0.1.0-preview.2",
     "@aws-sdk/client-cognito-identity-provider": "^3.42.0",
     "@aws-sdk/client-dynamodb": "^3.42.0",
     "@aws-sdk/credential-providers": "^3.42.0",

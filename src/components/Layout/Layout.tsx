@@ -5,6 +5,7 @@ import './Layout.scss';
 import { useDevice } from "../../state/device/hooks";
 import {Button} from "../Button/Button";
 import {AiOutlineMenu} from "react-icons/all";
+import {SubscribeButton} from "../SubscribeButton/SubscribeButton";
 
 export const menuBarClass = 'menu-bar';
 
@@ -39,7 +40,7 @@ export const Layout = () => {
                 <NavLink to="settings">Settings</NavLink>
             </div> :
             <div className={'menu-items' }>
-                <Button>Keep updated</Button>
+                <SubscribeButton setState={setState}/>
             </div>
     return (
         <>
