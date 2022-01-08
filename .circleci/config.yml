@@ -28,6 +28,9 @@ jobs:
       - run:
           name: Upload file to S3
           command: aws s3 sync ./dist/ s3://dev.anton.webapp.fe --delete
+      - run:
+          name: Invalidate Distribution
+          command: aws cloudfront create-invalidation --distribution-id E3N1LVA6BXVGS7 --paths '/*'
 
 workflows:
   version: 2
