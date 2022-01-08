@@ -24,9 +24,11 @@ export const newsletterSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(createNewsletter.pending, (state: NewsletterState, action) => {
+            state.error = undefined;
             state.pending = true;
         })
         builder.addCase(createNewsletter.rejected, (state: NewsletterState, action: any) => {
+            console.error(state.error, action.error);
             state.error = 'Error during connection, retry later';
             state.pending = false;
         })
