@@ -13,7 +13,7 @@ jobs:
           command: yarn
       - run:
           name: Building project
-          command: yarn build
+          command: CI=false yarn build
       - persist_to_workspace:
           root: .
           paths:
