@@ -1,16 +1,16 @@
 import './Home.scss';
-import {SpaceCover} from "../../components/SpaceCover/SpaceCover";
+import React from "react";
 import {TransactionsCounter} from "../../components/TransactionsCounter/TransactionsCounter";
 import {GlowCard} from "../../components/GlowCard/GlowCard";
 import {VolumeCounter} from "../../components/VolumeCounter/VolumeCounter";
 import {WalletsCounter} from "../../components/WalletsCounter/WalletsCounter";
 import {BezierShape} from "../../components/BezierShape/BezierShape";
-import React from "react";
 import {PriceTab} from "../../components/PriceTab/PriceTab";
 import {BiPackage, GiJetpack, SiWebpack} from "react-icons/all";
 import {Footer} from "../../components/Footer/Footer";
+import {SpaceCover} from "../../components/SpaceCover/SpaceCover";
 
-export const Home = () => (
+export const Home = (): JSX.Element => (
     <div className={'home'}>
         <SpaceCover />
         <div className={'gradient'}>

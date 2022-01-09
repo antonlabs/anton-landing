@@ -1,6 +1,6 @@
 import {NavLink, Outlet, useLocation} from "react-router-dom";
 import React, {CSSProperties, useState} from "react";
-import {useFetchProfile, useFetchWallets, useProfiles, useUpdateWalletsKeys} from "../../state/profiles/hooks";
+import {useFetchProfile, useFetchWallets, useProfiles} from "../../state/profiles/hooks";
 import './Layout.scss';
 import { useDevice } from "../../state/device/hooks";
 import {Button} from "../Button/Button";
@@ -10,7 +10,7 @@ import {SubscribeButton} from "../SubscribeButton/SubscribeButton";
 export const menuBarClass = 'menu-bar';
 
 
-export const Layout = () => {
+export const Layout = (): JSX.Element => {
     const { search, pathname } = useLocation();
     const query = React.useMemo(() => new URLSearchParams(search), [search]);
     const key = query.get('key');

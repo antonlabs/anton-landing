@@ -12,6 +12,6 @@ export const useFetchLandingInfo = () => {
     const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(fetchTotalTransactions());
-    }, [useDispatch])
+    }, [useDispatch, dispatch])
 
 }

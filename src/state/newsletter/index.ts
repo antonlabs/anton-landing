@@ -1,7 +1,6 @@
-import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {NewsletterState, ProfileModel} from "../types";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {NewsletterState} from "../types";
 import {sendSubscription} from "./helpers";
-import {profilesSlice} from "../profiles";
 
 export const createNewsletter = createAsyncThunk<string, string>(
     'profiles/newsletter',
@@ -18,12 +17,9 @@ export const newsletterSlice = createSlice({
         pending: false
     } as NewsletterState,
     reducers: {
-        createNewsletter: (state, action: PayloadAction<string>) => {
-
-        }
     },
     extraReducers: (builder) => {
-        builder.addCase(createNewsletter.pending, (state: NewsletterState, action) => {
+        builder.addCase(createNewsletter.pending, (state: NewsletterState) => {
             state.error = undefined;
             state.pending = true;
         })

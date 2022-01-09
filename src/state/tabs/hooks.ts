@@ -1,5 +1,4 @@
 import {useAppSelector} from "../index";
-import {getProfileByWalletName} from "../profiles/helpers";
 
 export const useTabs = () => {
     return useAppSelector((state) => state.tabManager.tabs);

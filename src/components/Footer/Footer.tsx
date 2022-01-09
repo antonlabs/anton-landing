@@ -1,20 +1,20 @@
 import "./Footer.scss";
 
-export const Footer = () => {
+export const Footer = (): JSX.Element => {
     return <div className={'footer'}>
         <div className={'w-100 flex-row between'}>
             <div className={'flex-column'}>
                 <h3>About Anton</h3>
-                <a>Community</a>
-                <a>Contact</a>
-                <a>Brand</a>
-                <a>Blog</a>
+                <a href={'/'}>Community</a>
+                <a href={'/'}>Contact</a>
+                <a href={'/'}>Brand</a>
+                <a href={'/'}>Blog</a>
             </div>
             <div className={'flex-column'}>
                 <h3>Help me!</h3>
-                <a>Customer support</a>
-                <a>FAQs</a>
-                <a>Docs</a>
+                <a href={'/'}>Customer support</a>
+                <a href={'/'}>FAQs</a>
+                <a href={'/'}>Docs</a>
 
             </div>
             <div className={'flex-column'}>

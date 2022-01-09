@@ -2,7 +2,7 @@ import {useLandingInfo} from "../../state/landing-info/hooks";
 import "./TransactionsCounter.scss";
 import {BsCurrencyExchange} from "react-icons/all";
 
-export const TransactionsCounter = () => {
+export const TransactionsCounter = (): JSX.Element => {
     const landingInfo = useLandingInfo();
     return <div className={'counter'}>
         <h2>Total transactions</h2>

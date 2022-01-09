@@ -2,7 +2,7 @@ import {useLandingInfo} from "../../state/landing-info/hooks";
 import "./WalletsCounter.scss";
 import {BsCurrencyExchange} from "react-icons/all";
 
-export const WalletsCounter = () => {
+export const WalletsCounter = (): JSX.Element => {
     const landingInfo = useLandingInfo();
     return <div className={'counter'}>
         <h2>Wallets opened</h2> <br/>

@@ -3,7 +3,7 @@ import {useInit, useProfiles} from "../../state/profiles/hooks";
 import "./WalletStack.scss";
 import {CreateWalletCard} from "../CreateWalletCard/CreateWalletCard";
 
-export const WalletStack = () => {
+export const WalletStack = (): JSX.Element => {
     const profiles = useProfiles();
     const init = useInit();
     const wallets = profiles.profiles.map((profile, i) => <WalletCard key={profile.wallet.name} wallet={profile.wallet} selected={i === 0}/>);

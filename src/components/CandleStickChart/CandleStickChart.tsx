@@ -30,7 +30,7 @@ export const CandleStickChart = (props: {candles: KlineModel[]}) => {
         return () => {
             chart?.remove();
         }
-    }, []);
+    }, [device.screenWidth, lastCandle]);
 
     useEffect(() => {
         console.log('refresh series', props.candles);

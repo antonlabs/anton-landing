@@ -1,4 +1,4 @@
-import {DeviceState, Order, SearchOrder, sides} from "../../state/types";
+import {Order, SearchOrder, sides} from "../../state/types";
 import './OrderCard.scss';
 import {Button} from "../Button/Button";
 import {useNavigate} from "react-router-dom";
@@ -17,7 +17,7 @@ const getOrderGroup = (
     walletName: string,
     side: sides
 ): JSX.Element[] => {
-    const parentOrder = o.parentOrder;
+    const {parentOrder} = o;
     components.push(
         <div key={o.orderId + '-sub'} className={'order ' + (components.length > 0 ? 'sub ' + (o.open ? 'hide' : '') : '')}>
             <h5>{o.symbol}</h5>

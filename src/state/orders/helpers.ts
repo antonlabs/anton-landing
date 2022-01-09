@@ -1,4 +1,4 @@
-import {Order, ProfileModel, SearchOrder, SearchOrderListId, sides} from "../types";
+import {Order, SearchOrder, SearchOrderListId, sides} from "../types";
 
 export const findOrderById = (search: SearchOrder, orders: Order[]): Order | undefined => {
     for(const order of orders) {

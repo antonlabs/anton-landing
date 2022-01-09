@@ -82,11 +82,11 @@ export const profilesSlice = createSlice({
             state.openWallets = !state.openWallets;
         },
         selectWallet: (state, action: PayloadAction<string>) => {
-            state.profiles = state.profiles.sort((a, b) => a.wallet.name === action.payload ? -1 : 1)
+            state.profiles = state.profiles.sort((a) => a.wallet.name === action.payload ? -1 : 1)
         }
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchProfile.pending, (state, action) => {
+        builder.addCase(fetchProfile.pending, () => {
             console.log('fetching profiles...');
         })
         builder.addCase(fetchProfile.fulfilled, (state, action) => {
@@ -94,8 +94,6 @@ export const profilesSlice = createSlice({
             if(action.payload && state.profiles.findIndex(item => item.wallet.name === action.payload.wallet.name) === -1) {
                 state.profiles.push(action.payload);
             }
-        })
-        builder.addCase(fetchProfile.rejected, (state, action) => {
         })
         builder.addCase(fetchWallets.fulfilled, (state, action) => {
            state.profiles = action.payload;

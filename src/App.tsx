@@ -4,12 +4,11 @@ import {BrowserRouter, Navigate, Routes} from "react-router-dom";
 import {Route} from "react-router";
 import {Layout} from "./components/Layout/Layout";
 import {Home} from "./views/Home/Home";
-import {Settings} from "./views/Settings/Settings";
 import {OrdersList} from "./views/OrdersList/OrdersList";
 import {OrdersLayout} from "./components/OrdersLayout/OrdersLayout";
 
 
-export const App = () => {
+export const App = (): JSX.Element => {
     return (
       <BrowserRouter>
           <Routes>
@@ -21,7 +20,6 @@ export const App = () => {
                       <Route path={'sell'} element={<OrdersList side={'sell'}/>} />
                       <Route path={'history'} element={<OrdersList side={'history'}/>} />
                   </Route>
-                  <Route path="settings" element={<Settings />} />
               </Route>
           </Routes>
       </BrowserRouter>

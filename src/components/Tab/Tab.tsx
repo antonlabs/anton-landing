@@ -3,7 +3,7 @@ import './Tab.scss';
 import {Button} from "../Button/Button";
 import {AiOutlineClose} from "react-icons/all";
 import {useAppDispatch} from "../../state";
-import {changeFocus, fetchCandles, removeTab} from "../../state/tabs";
+import {changeFocus, removeTab} from "../../state/tabs";
 
 export const Tab = (props: {tab: TabI, selected: boolean}) => {
     const dispatch = useAppDispatch();

@@ -14,7 +14,7 @@ const particlesLoaded = (container: Container) => {
     console.log(container);
 }
 
-export const SpaceCover = () => {
+export const SpaceCover = (): JSX.Element => {
     const [state, setState] = useState({creating: false});
     const style = {
         transform: `scale(${state.creating ? '0' : '1'})`

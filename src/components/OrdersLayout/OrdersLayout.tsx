@@ -9,7 +9,7 @@ import {ReflexContainer, ReflexElement, ReflexSplitter} from "react-reflex";
 import "react-reflex/styles.css";
 
 
-export const OrdersLayout = () => {
+export const OrdersLayout = (): JSX.Element => {
     const profiles = useProfiles();
     const dispatch = useAppDispatch();
     const currentProfile = profiles.profiles[0];
@@ -22,7 +22,7 @@ export const OrdersLayout = () => {
 
     const options = profiles.profiles.map(profile => <option key={profile.wallet.name+'-select-option'} value={profile.wallet.name}>{profile.wallet.name}</option>);
     const menuOptions = ['Buy', 'Sell', 'History'].map(key => <option value={key.toLowerCase()} key={key}>{key}</option>)
-    let orientation: 'horizontal' | 'vertical' = 'horizontal';
+    const orientation: 'horizontal' | 'vertical' = 'horizontal';
     return (
         <div className={'orders-layout'}>
             <div className={'mobile-bar'}>

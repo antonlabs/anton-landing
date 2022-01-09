@@ -1,0 +1,42 @@
+{
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["./src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jest": true
+  },
+  "extends": [
+      "prettier",
+      "prettier/@typescript-eslint",
+      "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "no-useless-constructor": 0,
+    "no-plusplus": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/no-inferrable-types": [
+      "error",
+      {
+        "ignoreParameters": true
+      }
+    ],
+    "no-param-reassing": 0,
+    "prefer-destructuring": ["warn", { "object": true, "array": false }],
+    "no-underscore-dangle": 0,
+    "import/prefer-default-export": 0,
+    "react/react-in-jsx-scope": "off",
+    "no-param-reassign": 0,
+    "react/require-default-props": 0,
+    "no-nested-ternary": 0,
+    "max-classes-per-file": 1
+  }
+}

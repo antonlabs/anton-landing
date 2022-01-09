@@ -4,20 +4,19 @@ import {TitleModel} from "./binance/models/title.model";
 import {TradeInfoModel} from "./binance/models/trade-info.model";
 import {OrderModel} from "./binance/models/order.model";
 
-const crypto = require('crypto');
-const querystring = require('querystring');
-
+import * as crypto from 'crypto';
+import * as querystring from 'querystring';
 
 export abstract class ExchangeClient {
 
     requestsChunks = 100;
 
-    constructor(
+    protected constructor(
         protected environment: any,
         protected url: string,
         protected apikey: string,
         protected apiSecret: string
-    ) {};
+    ) {}
 
     signBytes(msg: string): string {
         console.log('Signing', msg, this.apiSecret);

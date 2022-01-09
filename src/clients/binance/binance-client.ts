@@ -225,7 +225,7 @@ export class BinanceClient extends ExchangeClient {
             console.warn(e);
             const errorCode = e.response.data.code;
             console.log('ERROR CODE', errorCode);
-            if(errorCode == -1013) {
+            if(errorCode === -1013) {
                 return this.sellTitleMarket(symbol, quantity);
             }else {
                 throw e;
@@ -273,7 +273,7 @@ export class BinanceClient extends ExchangeClient {
         }catch(e: any) {
             const errorCode = e.response.data.code;
             console.log('ERROR CODE', errorCode);
-            if(errorCode == -2010) {
+            if(errorCode === -2010) {
                 price += (price * 0.01);
                 return this.sellTitle(symbol, price, quantity, actualPrice);
             }else {

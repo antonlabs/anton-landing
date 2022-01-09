@@ -5,19 +5,19 @@ import {SymbolChart} from "../SymbolChart/SymbolChart";
 
 import "./TabManager.scss";
 
-export const TabManagerCover = () => (
+export const TabManagerCover = (): JSX.Element => (
     <div className={'tabs-manager-cover'}>
 
     </div>
 );
 
 
-export const TabManager = () => {
+export const TabManager = (): JSX.Element => {
     const tabs = useTabs();
     const selectedTabIndex = useSelectTabIndex();
     const selectedTab = useSelectedTab();
     console.log('selected tab', selectedTabIndex);
-    const tabsComponents = tabs.map((tab, i) => <Tab key={tab.symbol} tab={tab} selected={selectedTab?.symbol === tab.symbol} />);
+    const tabsComponents = tabs.map((tab) => <Tab key={tab.symbol} tab={tab} selected={selectedTab?.symbol === tab.symbol} />);
 
     if(tabs.length > 0) {
         return (

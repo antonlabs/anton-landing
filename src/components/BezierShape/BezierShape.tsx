@@ -9,19 +9,18 @@ const animationMax = 200;
 
 const timeouts: {[key: string]: any} = {}
 
-
 const makeid = (length: number) => {
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
+    let result           = '';
+    const characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
         result += characters.charAt(Math.floor(Math.random() *
             charactersLength));
     }
     return result;
 }
 
-const drawLine = (id: string, ctx: CanvasRenderingContext2D, color: string, points: {x: number, y: number}[], currentMode: number = 0) => {
+const drawLine = (id: string, ctx: CanvasRenderingContext2D, color: string, points: {x: number, y: number}[], currentMode = 0) => {
     ctx.fillStyle = color;
     ctx.beginPath();
     ctx.moveTo(points[0].x, points[0].y);
@@ -61,7 +60,7 @@ const run = (
         ctx.translate(0, height);
         ctx.scale(1, -1);
     }
-    let points = [
+    const points = [
         {x:0,y:0},
         {x:window.innerWidth / 3, y: height},
         {x:window.innerWidth / 2,y:200},

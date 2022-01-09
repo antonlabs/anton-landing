@@ -1,4 +1,4 @@
-import {Order, TabI} from "../../state/types";
+import {TabI} from "../../state/types";
 import React from "react";
 import {ReflexContainer, ReflexElement, ReflexSplitter} from "react-reflex";
 import {useDevice} from "../../state/device/hooks";
@@ -10,7 +10,7 @@ import "./SymbolChart.scss";
 
 export const SymbolChart = (props: {tab: TabI, candles: KlineModel[]}): any => {
     const device = useDevice();
-    let orientation: 'horizontal' | 'vertical' = device.isMobile ? 'horizontal' : 'vertical';
+    const orientation: 'horizontal' | 'vertical' = device.isMobile ? 'horizontal' : 'vertical';
 
     const orderList = props.tab.orders.map((order) => <div key={order.orderId+'-mini'} className={'order-row flex-row'}>{order.price} <OrderTypeCard order={order} /></div> )
 

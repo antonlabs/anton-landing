@@ -1,14 +1,13 @@
 import "./SpaceHole.scss";
-import {holeConfig, particlesConfig} from "../../config/particles-config";
+import {holeConfig} from "../../config/particles-config";
 import Particles, {Container, Main} from "react-tsparticles";
 import React from "react";
-import {BubbleShape} from "../BubbleShape/BubbleShape";
 
 function makeid(length: number) {
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
+    let result           = '';
+    const characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
         result += characters.charAt(Math.floor(Math.random() *
             charactersLength));
     }
@@ -27,7 +26,7 @@ const particlesLoaded = (container: Container) => {
 export const SpaceHole = ({children}: any) => {
     const id = makeid(10);
     return <div className={'space-hole'}>
-        <img src={'/assets/hole-small.svg'} />
+        <img alt={''} src={'/assets/hole-small.svg'} />
         <Particles
             id={"hole-" + id}
             init={particlesInit}

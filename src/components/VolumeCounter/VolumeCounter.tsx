@@ -2,7 +2,7 @@ import {useLandingInfo} from "../../state/landing-info/hooks";
 import "./VolumeCounter.scss";
 import {BsCurrencyExchange} from "react-icons/all";
 
-export const VolumeCounter = () => {
+export const VolumeCounter = (): JSX.Element => {
     const landingInfo = useLandingInfo();
     return <div className={'counter'}>
         <h2>Daily volume</h2>
