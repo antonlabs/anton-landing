@@ -1,5 +1,6 @@
 import "./BezierShape.scss";
 import {useEffect} from "react";
+import { useDevice } from "../../state/device/hooks";
 
 let ctx: CanvasRenderingContext2D | undefined | null;
 
@@ -20,7 +21,7 @@ const makeid = (length: number) => {
     return result;
 }
 
-const drawLine = (id: string, ctx: CanvasRenderingContext2D, color: string, points: {x: number, y: number}[], currentMode = 0) => {
+const drawLine = (id: string, ctx: CanvasRenderingContext2D, color: string, points: {x: number, y: number}[],  animation: boolean = true, currentMode = 0) => {
     ctx.fillStyle = color;
     ctx.beginPath();
     ctx.moveTo(points[0].x, points[0].y);
@@ -40,10 +41,13 @@ const drawLine = (id: string, ctx: CanvasRenderingContext2D, color: string, poin
     ctx.lineTo(0, points[1].y);
     ctx.lineTo(points[0].x, points[0].y);
     ctx.fill();
-    timeouts[id] = setTimeout(() => {
-        clear(ctx);
-        drawLine(id, ctx, color, points, currentMode);
-    }, 100)
+    if(animation) {
+        timeouts[id] = setTimeout(() => {
+            clear(ctx);
+            drawLine(id, ctx, color, points, animation, currentMode);
+        }, 100);
+    }
+
 }
 
 const clear = (ctx: CanvasRenderingContext2D) => {
@@ -55,7 +59,9 @@ const run = (
     ctx: CanvasRenderingContext2D,
     color: string = 'white',
     reverse: boolean = false,
-    height = 400) => {
+    height = 400,
+    animation: boolean = true
+    ) => {
     if(reverse) {
         ctx.translate(0, height);
         ctx.scale(1, -1);
@@ -66,12 +72,14 @@ const run = (
         {x:window.innerWidth / 2,y:200},
         {x:window.innerWidth, y:height}
     ]
-    drawLine(id, ctx, color, points);
+    drawLine(id, ctx, color, points, animation);
 }
 
 export const BezierShape = (props: {color?: string, reverse?: boolean, height?: number}) => {
     const currentHeight = props.height ?? 400;
     const id = 'canvas' + makeid(10);
+    const device = useDevice();
+
     useEffect(() => {
         return () => {
             clearTimeout(timeouts[id])
@@ -81,7 +89,7 @@ export const BezierShape = (props: {color?: string, reverse?: boolean, height?: 
     return <canvas width={window.innerWidth} height={(currentHeight) + 'px'} ref={(c) => {
         ctx = c?.getContext('2d');
         if(ctx) {
-            run(id, ctx, props.color, props.reverse, currentHeight);
+            run(id, ctx, props.color, props.reverse, currentHeight, !device.isMobile);
         }
     }} id={id} className={'canvas'} />
 }
