@@ -13,7 +13,7 @@ jobs:
           command: yarn
       - run:
           name: Building project
-          command: CI=false yarn build
+          command: CI=false yarn build:${CIRCLE_BRANCH}
       - persist_to_workspace:
           root: .
           paths:
