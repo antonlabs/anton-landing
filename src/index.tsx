@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import store from './state';
 import {State} from "./state/types";
-import { render } from 'react-snapshot';
+import ReactDOM from 'react-dom';
 
 store.subscribe(() => {
     const state: State = JSON.parse(JSON.stringify(store.getState()));
@@ -20,7 +20,7 @@ store.subscribe(() => {
     localStorage.setItem('state', JSON.stringify(state))
 })
 
-render(
+ReactDOM.render(
   <React.StrictMode>
       <Provider store={store}>
           <App />
