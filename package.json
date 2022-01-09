@@ -4,11 +4,6 @@
   "private": true,
   "author": "Paolo Di Ciaula",
   "homepage": "/",
-  "development": [
-    "last 1 chrome version",
-    "last 1 firefox version",
-    "last 1 safari version"
-  ],
   "dependencies": {
     "@aws-sdk/client-cognito-identity-provider": "^3.42.0",
     "@aws-sdk/client-dynamodb": "^3.42.0",
@@ -69,6 +64,13 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "reactSnapshot": {
+    "include": [
+      "/orders",
+      "/"
+    ],
+    "snapshotDelay": 300
   },
   "browserslist": {
     "production": [
