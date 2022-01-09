@@ -12,7 +12,7 @@ store.subscribe(() => {
     state.profiles.init = false;
     state.device = {
         screenWidth: window.innerWidth,
-        isMobile: window.innerWidth < 700
+        isMobile: window.innerWidth < 768
     };
     state.orders = {};
     delete state.newsletter.error;

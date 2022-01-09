@@ -21,7 +21,7 @@ const makeid = (length: number) => {
     return result;
 }
 
-const drawLine = (id: string, ctx: CanvasRenderingContext2D, color: string, points: {x: number, y: number}[],  animation: boolean = true, currentMode = 0) => {
+const drawLine = (id: string, ctx: CanvasRenderingContext2D, color: string, points: {x: number, y: number}[], animation: boolean = true, currentMode = 0) => {
     ctx.fillStyle = color;
     ctx.beginPath();
     ctx.moveTo(points[0].x, points[0].y);
@@ -47,7 +47,6 @@ const drawLine = (id: string, ctx: CanvasRenderingContext2D, color: string, poin
             drawLine(id, ctx, color, points, animation, currentMode);
         }, 100);
     }
-
 }
 
 const clear = (ctx: CanvasRenderingContext2D) => {
@@ -58,14 +57,9 @@ const run = (
     id: string,
     ctx: CanvasRenderingContext2D,
     color: string = 'white',
-    reverse: boolean = false,
     height = 400,
     animation: boolean = true
     ) => {
-    if(reverse) {
-        ctx.translate(0, height);
-        ctx.scale(1, -1);
-    }
     const points = [
         {x:0,y:0},
         {x:window.innerWidth / 3, y: height},
@@ -75,21 +69,22 @@ const run = (
     drawLine(id, ctx, color, points, animation);
 }
 
-export const BezierShape = (props: {color?: string, reverse?: boolean, height?: number}) => {
+export const BezierShape = (props: {color?: string, reverse?: boolean, height?: number, style?: any}) => {
     const currentHeight = props.height ?? 400;
     const id = 'canvas' + makeid(10);
     const device = useDevice();
-
     useEffect(() => {
         return () => {
-            clearTimeout(timeouts[id])
-            delete timeouts[id]
+            if(timeouts[id]) {
+                clearTimeout(timeouts[id])
+                delete timeouts[id]
+            }
         }
     })
-    return <canvas width={window.innerWidth} height={(currentHeight) + 'px'} ref={(c) => {
+    return <canvas style={props.style ?? {}} width={window.innerWidth} height={(currentHeight) + 'px'} ref={(c) => {
         ctx = c?.getContext('2d');
         if(ctx) {
-            run(id, ctx, props.color, props.reverse, currentHeight, !device.isMobile);
+            run(id, ctx, props.color, currentHeight, !device.isMobile);
         }
     }} id={id} className={'canvas'} />
 }

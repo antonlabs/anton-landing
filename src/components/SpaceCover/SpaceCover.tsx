@@ -50,7 +50,7 @@ export const SpaceCover = (): JSX.Element => {
                 </div>
                 <div className={'moon'}>
                     <div className={'flex-row center'}>
-                        <img src={'/assets/astronaut.svg'} />
+                        <img alt='' src={'/assets/astronaut.png'} />
                     </div>
                 </div>
             </div>

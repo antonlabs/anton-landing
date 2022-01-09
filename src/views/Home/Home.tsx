@@ -35,7 +35,7 @@ export const Home = (): JSX.Element => (
                         It helps you trade and manage your crypto in a secure, reliable and profitable way!
                     </h5>
                 </div>
-                <div className={'image'} style={{backgroundImage: 'url("/assets/getting-started.svg")'}} />
+                <div className={'image'} style={{backgroundImage: 'url("/assets/getting-started.png")'}} />
             </div>
 
             <div className={'flex-row home-row reverse'}>
@@ -44,7 +44,7 @@ export const Home = (): JSX.Element => (
                     <h5>We never share your personal information and can't access directly your funds, YOU are in control!</h5>
                 </div>
 
-                <div className={'image'} style={{backgroundImage: 'url("/assets/superhero.svg")'}} />
+                <div className={'image'} style={{backgroundImage: 'url("/assets/hero.png")'}} />
             </div>
 
             <div className={'flex-row home-row'}>
@@ -52,7 +52,7 @@ export const Home = (): JSX.Element => (
                     <h2>Reliable</h2>
                     <h5><b>Anton</b> doesn't sleep, it's 24/7 scouting to never miss an opportunity.</h5>
                 </div>
-                <div className={'image'} style={{backgroundImage: 'url("/assets/coffee.svg")'}} />
+                <div className={'image'} style={{backgroundImage: 'url("/assets/coffee.png")'}} />
             </div>
 
             <div className={'flex-row home-row reverse'}>
@@ -60,10 +60,10 @@ export const Home = (): JSX.Element => (
                     <h2>Fully customizable</h2>
                     <h5>Are you an expert trader? Create your own strategy and use all the tools Anton gives you!</h5>
                 </div>
-                <div className={'image'} style={{backgroundImage: 'url("/assets/contribute.svg")'}} />
+                <div className={'image'} style={{backgroundImage: 'url("/assets/contribute.png")'}} />
             </div>
         </div>
-        <BezierShape color={'rgba(198, 158, 56, 0.5)'} reverse={true} height={300} />
+        <BezierShape color={'rgba(198, 158, 56, 0.5)'} reverse={true} style={{transform: 'scale(1, -1)'}} height={300} />
         <div className={'units-explain'}>
             <GlowCard>
                 <h2>Anton is powered by units</h2>
