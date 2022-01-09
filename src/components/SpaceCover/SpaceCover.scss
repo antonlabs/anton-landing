@@ -25,7 +25,14 @@ canvas {
   height: 400px;
 }
 
-.hover {
+
+@media only screen and (max-width: 768px) { //mobile
+  .curve-cover {
+    height: 200px;
+  }
+}
+
+  .hover {
   display: flex;
   flex-direction: row;
   position: relative;
@@ -81,10 +88,6 @@ canvas {
   }
 
   @media only screen and (max-width: 768px) { //mobile
-
-    .curve-cover {
-      height: 200px;
-    }
     .wallets, .subscribe {
       left: 15px;
       h1 {
