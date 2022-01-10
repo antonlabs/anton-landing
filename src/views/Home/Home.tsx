@@ -83,3 +83,6 @@ export const Home = (): JSX.Element => (
         <Footer />
     </div>
 );
+
+
+export default Home;

@@ -39,3 +39,5 @@ export const OrdersList = (props: {side: sides}): JSX.Element => {
     );
 }
 
+export default OrdersList;
+

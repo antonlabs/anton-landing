@@ -57,3 +57,5 @@ export const OrdersLayout = (): JSX.Element => {
         </div>
     );
 }
+
+export default OrdersLayout;

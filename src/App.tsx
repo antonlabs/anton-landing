@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {lazy} from 'react';
 import './App.scss';
 import {BrowserRouter, Navigate, Routes} from "react-router-dom";
 import {Route} from "react-router";
 import {Layout} from "./components/Layout/Layout";
-import {Home} from "./views/Home/Home";
-import {OrdersList} from "./views/OrdersList/OrdersList";
-import {OrdersLayout} from "./components/OrdersLayout/OrdersLayout";
+import Home from "./views/Home/Home";
 
+
+const OrdersLayout = lazy(() => import('./components/OrdersLayout/OrdersLayout'))
+const OrdersList = lazy(() => import('./views/OrdersList/OrdersList'))
 
 export const App = (): JSX.Element => {
     return (
