@@ -20,7 +20,7 @@ export const SpaceCover = (): JSX.Element => {
     const device = useDevice();
     return (
         <div className={'cover'}>
-            <Particles
+            {/*<Particles
                 id="tsparticles"
                 init={particlesInit}
                 style={{'position': 'absolute'}}
@@ -28,7 +28,7 @@ export const SpaceCover = (): JSX.Element => {
                 options={particlesConfig as any}
             >
             </Particles>
-            {/*<img className={'curve-cover'} src={'/assets/curve-cover.png'} />*/}
+            <img className={'curve-cover'} src={'/assets/curve-cover.png'} />*/}
             <div className={'curve-cover'}>
                 <BezierShape height={device.isMobile ? 200 : 400} />
             </div>

@@ -32,7 +32,7 @@ export const holeConfig = {
             attract: { enable: false, rotateX: 600, rotateY: 600 },
             bounce: false,
             direction: "none",
-            enable: true,
+            enable: false,
             out_mode: "out",
             random: true,
             speed: 0.3,
@@ -99,7 +99,7 @@ export const particlesConfig = {
                 speed: 0.3,
                 straight: false
         },
-        number: { density: { enable: true, value_area: 800 }, value: 600 },
+        number: { density: { enable: true, value_area: 800 }, value: 300 },
         opacity: {
             anim: { enable: true, opacity_min: 0.3, speed: 5, sync: false },
             random: {

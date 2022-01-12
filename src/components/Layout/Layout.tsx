@@ -25,6 +25,7 @@ export const Layout = (): JSX.Element => {
     if(pathname === '/') {
         style = {
             position: 'fixed',
+            padding: '10px',
             background: 'rgba(32,32,32,.6)',
             transform: device.isMobile ? 'translate(0, 0)' : 'translateX(2.5%)',
             borderRadius: device.isMobile ? '0' : '10px',

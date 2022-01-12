@@ -1,4 +1,4 @@
-import {AllOrders, Order, OrdersPayload, sides} from "../types";
+import {Order, OrdersPayload, sides} from "../types";
 import {useAppDispatch, useAppSelector} from "../index";
 import {useEffect} from "react";
 import {fetchOrders} from "./index";
@@ -6,10 +6,6 @@ import {useCurrentProfile} from "../profiles/hooks";
 
 export const useOrders = (): OrdersPayload => {
     return useAppSelector((state) => state.orders);
-}
-
-export const useWalletOrders = (walletName: string): AllOrders => {
-    return useAppSelector((state) => state.orders[walletName]);
 }
 
 export const useOrdersBySide = (walletName: string, side: sides): Order[] => {
