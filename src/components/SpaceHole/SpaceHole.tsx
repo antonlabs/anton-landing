@@ -1,7 +1,6 @@
 import "./SpaceHole.scss";
-import {holeConfig} from "../../config/particles-config";
-import Particles, {Container, Main} from "react-tsparticles";
 import React from "react";
+import {Particles} from "../Particles/Particles";
 
 function makeid(length: number) {
     let result           = '';
@@ -14,27 +13,12 @@ function makeid(length: number) {
     return result;
 }
 
-const particlesInit = (main: Main) => {
-    main.init();
-}
-
-const particlesLoaded = (container: Container) => {
-    console.log(container);
-}
-
 
 export const SpaceHole = ({children}: any) => {
     const id = makeid(10);
     return <div className={'space-hole'}>
         <img alt={''} src={'/assets/hole-small.svg'} />
-        {/*<Particles
-            id={"hole-" + id}
-            init={particlesInit}
-            style={{'position': 'absolute'}}
-            loaded={particlesLoaded}
-            options={holeConfig as any}
-        >
-        </Particles>*/}
+        <Particles />
         <div className={'content'}>
             {children}
         </div>

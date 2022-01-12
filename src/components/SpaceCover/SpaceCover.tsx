@@ -1,33 +1,17 @@
-import Particles, {Container, Main} from "react-tsparticles";
-import {particlesConfig} from "../../config/particles-config";
 import "./SpaceCover.scss";
 import {BezierShape} from "../BezierShape/BezierShape";
 import React, {useState} from "react";
 import {SubscriptionCard} from "../SubscriptionCard/SubscriptionCard";
 import { SubscribeButton } from "../SubscribeButton/SubscribeButton";
 import {useDevice} from "../../state/device/hooks";
-
-const particlesInit = (main: Main) => {
-    main.init();
-}
-
-const particlesLoaded = (container: Container) => {
-    console.log(container);
-}
+import { Particles } from "../Particles/Particles";
 
 export const SpaceCover = (): JSX.Element => {
     const [state, setState] = useState({creating: false});
     const device = useDevice();
     return (
         <div className={'cover'}>
-            {/*<Particles
-                id="tsparticles"
-                init={particlesInit}
-                style={{'position': 'absolute'}}
-                loaded={particlesLoaded}
-                options={particlesConfig as any}
-            >
-            </Particles>*/}
+            <Particles />
             {/*<img className={'curve-cover'} src={'/assets/curve-cover.png'} />*/}
             <div className={'curve-cover'}>
                 <BezierShape height={device.isMobile ? 200 : 400} />
