@@ -9,12 +9,10 @@ import ReactDOM from 'react-dom';
 
 store.subscribe(() => {
     const state: State = JSON.parse(JSON.stringify(store.getState()));
-    state.profiles.init = false;
     state.device = {
         screenWidth: window.innerWidth,
         isMobile: window.innerWidth < 768
     };
-    state.orders = {};
     delete state.newsletter.error;
     console.log(state);
     localStorage.setItem('state', JSON.stringify(state))

@@ -3,12 +3,12 @@ import React from "react";
 import {TransactionsCounter} from "../../components/TransactionsCounter/TransactionsCounter";
 import {GlowCard} from "../../components/GlowCard/GlowCard";
 import {VolumeCounter} from "../../components/VolumeCounter/VolumeCounter";
-import {WalletsCounter} from "../../components/WalletsCounter/WalletsCounter";
 import {BezierShape} from "../../components/BezierShape/BezierShape";
-import {PriceTab} from "../../components/PriceTab/PriceTab";
 import {BiPackage, GiJetpack, SiWebpack} from "react-icons/all";
 import {Footer} from "../../components/Footer/Footer";
 import {SpaceCover} from "../../components/SpaceCover/SpaceCover";
+import {WalletsCounter} from "../../components/WalletsCounter/WalletsCounter";
+import {PriceTab} from "../../components/PriceTab/PriceTab";
 
 export const Home = (): JSX.Element => (
     <div className={'home'}>
