@@ -18,7 +18,7 @@ export const SpaceHole = ({children}: any) => {
     const id = makeid(10);
     return <div className={'space-hole'}>
         <img alt={''} src={'/assets/hole-small.svg'} />
-        <Particles />
+        <Particles nParticles={30}/>
         <div className={'content'}>
             {children}
         </div>

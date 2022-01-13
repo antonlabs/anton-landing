@@ -10,7 +10,6 @@
     width: 2px;
     height: 2px;
     position: absolute;
-    opacity: 0.8;
     background: #fff;
     border-radius: 100% !important;
   }
@@ -23,6 +22,7 @@
   }
   50% {
     transform: scale(2);
+    box-shadow: rgba(255, 255, 255, 1) 0 0 2px 2px;
   }
   100% {
     transform: scale(1);
