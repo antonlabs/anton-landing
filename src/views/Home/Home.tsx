@@ -1,12 +1,9 @@
 import './Home.scss';
 import React from "react";
-import {TransactionsCounter} from "../../components/TransactionsCounter/TransactionsCounter";
 import {GlowCard} from "../../components/GlowCard/GlowCard";
-import {VolumeCounter} from "../../components/VolumeCounter/VolumeCounter";
 import {BezierShape} from "../../components/BezierShape/BezierShape";
 import {Footer} from "../../components/Footer/Footer";
 import {SpaceCover} from "../../components/SpaceCover/SpaceCover";
-import {WalletsCounter} from "../../components/WalletsCounter/WalletsCounter";
 
 
 export const Home = (): JSX.Element => (
