@@ -12,6 +12,7 @@ export interface DeviceState {
 export interface NewsletterState {
     error?: string;
     pending: boolean;
+    creating: boolean;
     subscribedWith?: string;
 }
 

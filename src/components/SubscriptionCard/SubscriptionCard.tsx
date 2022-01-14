@@ -10,7 +10,6 @@ import {createNewsletter} from "../../state/newsletter";
 import {useNewsletter} from "../../state/newsletter/hooks";
 
 const submitForm = (dispatch: any, email: string) => {
-    console.log(email);
     dispatch(createNewsletter(email));
 }
 

@@ -5,6 +5,7 @@ import { useDevice } from "../../state/device/hooks";
 import {Button} from "../Button/Button";
 import {AiOutlineMenu} from "react-icons/all";
 import {SubscribeButton} from "../SubscribeButton/SubscribeButton";
+import {useNewsletter} from "../../state/newsletter/hooks";
 
 export const menuBarClass = 'menu-bar';
 
@@ -14,7 +15,6 @@ export const Layout = (): JSX.Element => {
     const query = React.useMemo(() => new URLSearchParams(search), [search]);
     const key = query.get('key');
     const [mobileMenuOpen,  setState] = useState(false);
-    console.log('use fetch wallets');
     const device = useDevice();
     let style: CSSProperties = {};
 
@@ -30,7 +30,7 @@ export const Layout = (): JSX.Element => {
         }
     }
     const menu = <div className={'menu-items' }>
-                <SubscribeButton setState={setState}/>
+                <SubscribeButton />
     </div>
     return (
         <>
