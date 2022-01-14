@@ -37,7 +37,7 @@
 
 .subscribe {
   transition: .3s ease all;
-  left: -150%;
+  left: -150%!important;
 
   &.creating {
     left: 50px;
@@ -57,6 +57,7 @@
 
   .subscribe {
     width: 100%;
+    top: 15px;
     &.creating {
       left: 0!important;
     }
