@@ -54,7 +54,9 @@
   "scripts": {
     "start": "env-cmd -f .env.development react-scripts start",
     "build:develop": "eslint --fix && env-cmd -f .env.development react-scripts build",
-    "build:prod": "eslint --fix && env-cmd -f .env.production react-scripts build",
+    "build:master": "eslint --fix && env-cmd -f .env.production react-scripts build",
+    "deploy:develop": "./deploy.sh develop",
+    "deploy:master": "./deploy.sh prod",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
