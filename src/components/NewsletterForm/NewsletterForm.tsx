@@ -1,6 +1,6 @@
 import {SubscriptionCard} from "../SubscriptionCard/SubscriptionCard";
 import {SubscribeButton} from "../SubscribeButton/SubscribeButton";
-import React, {useState} from "react";
+import React from "react";
 import './NewsletterForm.scss';
 import {useNewsletter} from "../../state/newsletter/hooks";
 import {toggleCreate} from "../../state/newsletter";
