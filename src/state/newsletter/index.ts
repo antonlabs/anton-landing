@@ -34,6 +34,7 @@ export const newsletterSlice = createSlice({
         })
         builder.addCase(createNewsletter.fulfilled, (state: NewsletterState, action) => {
             state.subscribedWith = action.payload;
+            state.creating = false;
             state.pending = false;
         })
     }
