@@ -23,4 +23,15 @@
       right: 0;
     }
   }
+
+  .socials {
+    svg {
+      font-size: 25px;
+      margin-right: 10px;
+      transition: .2s ease all;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
 }

@@ -78,10 +78,14 @@ body {
   max-width: 500px;
   display: block;
   margin: 0 auto;
+  span {
+    color: $primary-color;
+    font-weight: bold;
+  }
 }
 
 .prices-section {
-  padding-top: 120px;
+  padding-top: 220px;
   position: relative;
 
   .prices-title {

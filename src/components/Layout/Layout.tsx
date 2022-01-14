@@ -1,11 +1,11 @@
-import {NavLink, Outlet, useLocation} from "react-router-dom";
+import {Outlet, useLocation} from "react-router-dom";
 import React, {CSSProperties, useState} from "react";
-import {useFetchProfile, useFetchWallets, useProfiles} from "../../state/profiles/hooks";
 import './Layout.scss';
 import { useDevice } from "../../state/device/hooks";
 import {Button} from "../Button/Button";
 import {AiOutlineMenu} from "react-icons/all";
 import {SubscribeButton} from "../SubscribeButton/SubscribeButton";
+import {useNewsletter} from "../../state/newsletter/hooks";
 
 export const menuBarClass = 'menu-bar';
 
@@ -15,11 +15,7 @@ export const Layout = (): JSX.Element => {
     const query = React.useMemo(() => new URLSearchParams(search), [search]);
     const key = query.get('key');
     const [mobileMenuOpen,  setState] = useState(false);
-    useFetchProfile(key!);
-    console.log('use fetch wallets');
-    useFetchWallets();
     const device = useDevice();
-    const profiles = useProfiles();
     let style: CSSProperties = {};
 
     if(pathname === '/') {
@@ -33,15 +29,9 @@ export const Layout = (): JSX.Element => {
             zIndex: '999'
         }
     }
-    const menu = profiles.profiles.length > 0 ? <div className={'menu-items'}>
-                <NavLink to="">Home</NavLink>
-                <NavLink to="orders">Orders</NavLink>
-                <NavLink to="errors">Errors</NavLink>
-                <NavLink to="settings">Settings</NavLink>
-            </div> :
-            <div className={'menu-items' }>
-                <SubscribeButton setState={setState}/>
-            </div>
+    const menu = <div className={'menu-items' }>
+                <SubscribeButton />
+    </div>
     return (
         <>
             <div className={menuBarClass} style={style}>

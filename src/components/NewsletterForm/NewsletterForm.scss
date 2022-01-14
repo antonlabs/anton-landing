@@ -1,0 +1,66 @@
+.wallets, .subscribe {
+  left: 50px;
+  margin-right: 50px;
+  text-align: left;
+  color: #fff;
+  height: 80vh;
+  position: absolute;
+  display: flex;
+  max-width: 400px;
+  flex-direction: column;
+  justify-content: center;
+  transition: .3s ease all;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  .stack {
+    flex: 3;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  h1:first-child, .subtitle {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    padding-bottom: 15px;
+  }
+}
+
+.wallets {
+  transform: scale(1);
+  &.creating {
+    transform: scale(0);
+  }
+}
+
+.subscribe {
+  transition: .3s ease all;
+  left: -150%!important;
+
+  &.creating {
+    left: 50px!important;
+  }
+}
+
+@media only screen and (max-width: 768px) { //mobile
+  .wallets, .subscribe {
+    left: 15px;
+    h1 {
+      font-size: 30px;
+    }
+    h2 {
+      font-size: 1em;
+    }
+  }
+
+  .subscribe {
+    width: 100%;
+    top: 15px;
+    &.creating {
+      left: 0!important;
+    }
+  }
+
+}
