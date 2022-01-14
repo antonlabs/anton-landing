@@ -12,10 +12,7 @@ export const SpaceCover = (): JSX.Element => {
     return (
         <div className={'cover'}>
             <Particles />
-            {/*<img className={'curve-cover'} src={'/assets/curve-cover.png'} />*/}
-            <div className={'curve-cover'}>
-                <BezierShape height={device.isMobile ? 200 : 400} />
-            </div>
+            <BezierShape height={device.isMobile ? 200 : 400} />
             <div className={'hover'}>
                 <div className={'subscribe ' + (state.creating ? 'creating' : '')}>
                     <SubscriptionCard cancel={() => setState(() => ({
@@ -28,9 +25,6 @@ export const SpaceCover = (): JSX.Element => {
                         <h2 className={'subtitle'}>Choose an investment strategy and start <b>earning!</b></h2>
                     </div>
                     <SubscribeButton setState={setState}/>
-                    {/*<div className={'stack'}>
-                            <WalletStack />
-                    </div>*/}
                 </div>
                 <div className={'moon'}>
                     <div className={'flex-row center'}>

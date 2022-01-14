@@ -1,24 +1,25 @@
 import "./Footer.scss";
+import {BsGithub, BsInstagram, BsTwitter} from "react-icons/all";
 
 export const Footer = (): JSX.Element => {
     return <div className={'footer'}>
         <div className={'w-100 flex-row between'}>
             <div className={'flex-column'}>
                 <h3>About Anton</h3>
-                <a href={'/'}>Community</a>
-                <a href={'/'}>Contact</a>
-                <a href={'/'}>Brand</a>
-                <a href={'/'}>Blog</a>
+                <a target={'_blank'} href={'https://twitter.com/Anton96113792'}>Community</a>
+                <a href={'mailto:contact@anton.finance'}>Contact</a>
             </div>
             <div className={'flex-column'}>
                 <h3>Help me!</h3>
-                <a href={'/'}>Customer support</a>
-                <a href={'/'}>FAQs</a>
-                <a href={'/'}>Docs</a>
-
+                <a href={'mailto:support@anton.finance'}>Customer support</a>
             </div>
             <div className={'flex-column'}>
-                <h3>For Developers</h3>
+                <h3>Social</h3>
+                <div className={'flex-row socials'}>
+                    <a target={'_blank'} href={'https://github.com/antonlabs'}><BsGithub /></a>
+                    <a target={'_blank'} href={'https://twitter.com/Anton96113792'}><BsTwitter /></a>
+                    <a target={'_blank'} href={'https://www.instagram.com/anton_copilot/'}><BsInstagram/></a>
+                </div>
             </div>
         </div>
         <div className={'credits'}>

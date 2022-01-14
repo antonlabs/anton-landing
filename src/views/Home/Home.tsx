@@ -35,7 +35,7 @@ export const Home = (): JSX.Element => (
                         It helps you trade and manage your crypto in a secure, reliable and profitable way!
                     </h5>
                 </div>
-                <div className={'image'} style={{backgroundImage: 'url("/assets/getting-started.png")'}} />
+                <div className={'image'} style={{backgroundImage: 'url("/assets/getting-started.webp")'}} />
             </div>
 
             <div className={'flex-row home-row reverse'}>
@@ -44,7 +44,7 @@ export const Home = (): JSX.Element => (
                     <h5>We never share your personal information and can't access directly your funds, YOU are in control!</h5>
                 </div>
 
-                <div className={'image'} style={{backgroundImage: 'url("/assets/hero.png")'}} />
+                <div className={'image'} style={{backgroundImage: 'url("/assets/hero.webp")'}} />
             </div>
 
             <div className={'flex-row home-row'}>
@@ -52,7 +52,7 @@ export const Home = (): JSX.Element => (
                     <h2>Reliable</h2>
                     <h5><b>Anton</b> doesn't sleep, it's 24/7 scouting to never miss an opportunity.</h5>
                 </div>
-                <div className={'image'} style={{backgroundImage: 'url("/assets/coffee.png")'}} />
+                <div className={'image'} style={{backgroundImage: 'url("/assets/coffee.webp")'}} />
             </div>
 
             <div className={'flex-row home-row reverse'}>
@@ -60,25 +60,19 @@ export const Home = (): JSX.Element => (
                     <h2>Fully customizable</h2>
                     <h5>Are you an expert trader? Create your own strategy and use all the tools Anton gives you!</h5>
                 </div>
-                <div className={'image'} style={{backgroundImage: 'url("/assets/contribute.png")'}} />
+                <div className={'image'} style={{backgroundImage: 'url("/assets/contribute.webp")'}} />
             </div>
         </div>
-        <BezierShape color={'rgba(198, 158, 56, 0.5)'} reverse={true} style={{transform: 'scale(1, -1)'}} height={300} />
+        <BezierShape color={'rgba(198, 158, 56, 0.5)'} style={{transform: 'scale(1, -1)'}} height={300} />
         <div className={'units-explain'}>
             <GlowCard>
-                <h2>Anton is powered by units</h2>
-                <p>Units set how many transaction can be created in parallel, so when anton buy an order consume 1 unit that gets back when sell the same order</p>
+                <h2>How much it costs reach the moon?</h2>
+                <p>Payment plans will be available for all kind of configuration and tailored for user needs.
+                    For less than a coffee per day you can have Anton by your side in your crypto journey.</p>
             </GlowCard>
         </div>
 
         <div className={'prices-section'}>
-            <h1 className={'prices-title'}>How much costs reach the moon?</h1>
-
-            <div className={'prices'}>
-                <PriceTab unitsNumber={10} price={5} icon={<BiPackage size={'50px'}/>} />
-                <PriceTab unitsNumber={50} price={15} icon={<SiWebpack size={'50px'}/>}/>
-                <PriceTab unitsNumber={150} price={25} icon={<GiJetpack size={'50px'}/>} />
-            </div>
         </div>
         <Footer />
     </div>
