@@ -17,7 +17,7 @@ export const Home = (): JSX.Element => (
                 <div className={'card-plain'}>
                     <h2>Begin easily</h2>
                     <h5>The easiest platform to start your crypto journey.<br/>
-                        It helps you trade and manage your crypto in a secure, reliable and profitable way!
+                        It helps you trade and manage your crypto in a secure, reliable and hopefully profitable way!
                     </h5>
                 </div>
                 <div className={'image'} style={{backgroundImage: 'url("/assets/getting-started.webp")'}} />
@@ -26,7 +26,7 @@ export const Home = (): JSX.Element => (
             <div className={'flex-row home-row reverse'}>
                 <div className={'card-plain'}>
                     <h2>Secure</h2>
-                    <h5>We never share your personal information and can't access directly your funds, YOU are in control!</h5>
+                    <h5>We'll never share your personal information and can't access directly your funds, YOU are in control!</h5>
                 </div>
 
                 <div className={'image'} style={{backgroundImage: 'url("/assets/hero.webp")'}} />
@@ -51,8 +51,8 @@ export const Home = (): JSX.Element => (
         <BezierShape color={'rgba(198, 158, 56, 1)'} style={{transform: 'scale(1, -1)'}} height={300} />
         <div className={'units-explain'}>
             <GlowCard>
-                <h2>How much it costs reach the moon?</h2>
-                <p>Payment plans will be available for all kind of configuration and tailored for user needs.
+                <h2>How much does it costs to reach the moon?</h2>
+                <p>Payment plans will be available for all kind of configurations and tailored for user's need.
                     For less than a coffee per day you can have Anton by your side in your crypto journey.</p>
             </GlowCard>
         </div>
