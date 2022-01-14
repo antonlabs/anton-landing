@@ -7,8 +7,8 @@ if [[ "$ENV" == "" ]]; then
     exit 2
 fi
 
-if [[ "$ENV" != "prod" ]] && [[ "$ENV" != "qa" ]] && [[ "$ENV" != "dev" ]]; then
-    echo "ENV is missing, please use [prod|qa|dev]"
+if [[ "$ENV" != "prod" ]] && [[ "$ENV" != "qa" ]] && [[ "$ENV" != "develop" ]]; then
+    echo "ENV is missing, please use [prod|qa|develop]"
     echo "Usage: $0 <environment-name> [<profile-name>]"
     exit 2
 fi
