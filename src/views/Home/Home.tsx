@@ -63,7 +63,7 @@ export const Home = (): JSX.Element => (
                 <div className={'image'} style={{backgroundImage: 'url("/assets/contribute.webp")'}} />
             </div>
         </div>
-        <BezierShape color={'rgba(198, 158, 56, 0.5)'} style={{transform: 'scale(1, -1)'}} height={300} />
+        <BezierShape color={'rgba(198, 158, 56, 1)'} style={{transform: 'scale(1, -1)'}} height={300} />
         <div className={'units-explain'}>
             <GlowCard>
                 <h2>How much it costs reach the moon?</h2>
