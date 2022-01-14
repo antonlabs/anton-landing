@@ -13,17 +13,6 @@ export const Home = (): JSX.Element => (
     <div className={'home'}>
         <SpaceCover />
         <div className={'gradient'}>
-            <div className={'counters'}>
-                <GlowCard>
-                    <TransactionsCounter />
-                </GlowCard>
-                <GlowCard>
-                    <VolumeCounter />
-                </GlowCard>
-                <GlowCard>
-                    <WalletsCounter />
-                </GlowCard>
-            </div>
             <div className={'card-plain slogan mt-3em'}>
                 <h1>Anton's skills</h1>
             </div>

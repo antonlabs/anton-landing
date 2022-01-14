@@ -1,9 +1,14 @@
 @import  "../../palette";
 
+.menu-bar-container {
+  display: flex;
+  justify-content: center;
+}
 .menu-bar {
   display: flex;
   width: 100%;
   position: fixed;
+  max-width: 1000px;
   transition: 0.2s all ease;
   backdrop-filter: blur(20px);
   flex-direction: row;

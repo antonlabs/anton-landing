@@ -21,8 +21,7 @@ export const Layout = (): JSX.Element => {
     if(pathname === '/') {
         style = {
             position: 'fixed',
-            background: 'rgba(32,32,32,.6)',
-            transform: device.isMobile ? 'translate(0, 0)' : 'translateX(2.5%)',
+            background: 'rgba(32, 32, 32, .6)',
             borderRadius: device.isMobile ? '0' : '10px',
             marginTop: device.isMobile ? '0' : '10px',
             width: device.isMobile ? '100%' : '95%',
@@ -33,7 +32,7 @@ export const Layout = (): JSX.Element => {
                 <SubscribeButton />
     </div>
     return (
-        <>
+        <div className={'menu-bar-container'}>
             <div className={menuBarClass} style={style}>
                 <div className={'logobar'}>
                     <img className={'logo'} src={'/assets/logo.svg'} />
@@ -49,6 +48,6 @@ export const Layout = (): JSX.Element => {
             <div className="content">
                 <Outlet />
             </div>
-        </>
+        </div>
     );
 }
