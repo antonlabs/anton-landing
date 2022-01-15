@@ -32,22 +32,24 @@ export const Layout = (): JSX.Element => {
                 <SubscribeButton />
     </div>
     return (
-        <div className={'menu-bar-container'}>
-            <div className={menuBarClass} style={style}>
-                <div className={'logobar'}>
-                    <img className={'logo'} src={'/assets/logo.svg'} />
-                    <h3 className={'desktop-only'}>Anton</h3>
+        <>
+            <div className={'menu-bar-container'}>
+                <div className={menuBarClass} style={style}>
+                    <div className={'logobar'}>
+                        <img className={'logo'} src={'/assets/logo.svg'} />
+                        <h3 className={'desktop-only'}>Anton</h3>
+                    </div>
+                    <nav className={'d-flex align-items-center menu ' + (mobileMenuOpen ? 'open' : '')}>
+                        <Button onClick={() => setState((s) => !s)} extraClasses={['toggle-menu']}>
+                            <AiOutlineMenu />
+                        </Button>
+                        {menu}
+                    </nav>
                 </div>
-                <nav className={'d-flex align-items-center menu ' + (mobileMenuOpen ? 'open' : '')}>
-                    <Button onClick={() => setState((s) => !s)} extraClasses={['toggle-menu']}>
-                        <AiOutlineMenu />
-                    </Button>
-                    {menu}
-                </nav>
             </div>
             <div className="content">
                 <Outlet />
             </div>
-        </div>
+        </>
     );
 }
