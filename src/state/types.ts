@@ -23,4 +23,9 @@ export interface State {
     device: DeviceState,
 }
 
+export interface SubscriptionPayload {
+    email: string;
+    captchaCode: string;
+}
+
 

@@ -1,12 +1,12 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {NewsletterState} from "../types";
+import {NewsletterState, SubscriptionPayload} from "../types";
 import {sendSubscription} from "./helpers";
 
-export const createNewsletter = createAsyncThunk<string, string>(
+export const createNewsletter = createAsyncThunk<SubscriptionPayload, SubscriptionPayload>(
     'profiles/newsletter',
-    async (email) => {
-        await sendSubscription(email);
-        return email;
+    async (payload) => {
+        await sendSubscription(payload);
+        return payload;
     }
 )
 
@@ -33,7 +33,7 @@ export const newsletterSlice = createSlice({
             state.pending = false;
         })
         builder.addCase(createNewsletter.fulfilled, (state: NewsletterState, action) => {
-            state.subscribedWith = action.payload;
+            state.subscribedWith = action.payload.email;
             state.creating = false;
             state.pending = false;
         })
