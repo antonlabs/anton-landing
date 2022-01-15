@@ -6,6 +6,8 @@ import {Provider} from "react-redux";
 import store from './state';
 import {State} from "./state/types";
 import ReactDOM from 'react-dom';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+
 
 store.subscribe(() => {
     const state: State = JSON.parse(JSON.stringify(store.getState()));
@@ -16,7 +18,11 @@ store.subscribe(() => {
 ReactDOM.render(
   <React.StrictMode>
       <Provider store={store}>
-          <App />
+        <GoogleReCaptchaProvider
+            reCaptchaKey="6Ldd2RQeAAAAABidUe7PPYzpYUnwIa599ZatjTf_"
+        >
+            <App />
+        </GoogleReCaptchaProvider>
       </Provider>
   </React.StrictMode>,
   document.getElementById('root')
