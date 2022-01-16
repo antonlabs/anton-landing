@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {LandingInfo} from "../types";
 import {getTotalTransactions} from "./helpers";
 
@@ -10,6 +10,8 @@ export const fetchTotalTransactions = createAsyncThunk<number>(
     }
 )
 
+export const languages = ['en', 'it'];
+
 
 export const landingInfoSlice = createSlice({
     name: 'landingInfo',
@@ -17,13 +19,8 @@ export const landingInfoSlice = createSlice({
         totalTransactions: 0
     } as LandingInfo,
     reducers: {
-
-    },
-    extraReducers: (builder) => {
-        builder.addCase(fetchTotalTransactions.fulfilled, (state, action) => {
-            console.log(action.payload);
-            state.totalTransactions = action.payload;
-        })
-
+        setLanguage: (state: LandingInfo, action: PayloadAction<string>) => {
+            state.language = (languages.indexOf(action.payload) > -1 ? action.payload : 'en') as 'en' | 'it';
+        }
     }
 });

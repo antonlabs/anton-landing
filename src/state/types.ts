@@ -1,6 +1,7 @@
 /*Landing state*/
 export interface LandingInfo {
     totalTransactions: number;
+    language: 'en' | 'it';
 }
 
 /*Device state*/

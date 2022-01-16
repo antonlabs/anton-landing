@@ -11,7 +11,7 @@ export const Home = (): JSX.Element => (
         <SpaceCover />
         <div className={'gradient'}>
             <div className={'card-plain slogan mt-3em'}>
-                <h1>Anton's skills</h1>
+                <h1>Who's Anton?</h1>
             </div>
             <div className={'flex-row home-row'}>
                 <div className={'card-plain'}>

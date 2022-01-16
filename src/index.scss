@@ -17,6 +17,14 @@ html, body {
   font-family: 'Bai Jamjuree', sans-serif;
 }
 
+a {
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
 #root {
   height: 100%;
 }
