@@ -1,6 +1,10 @@
 /*Landing state*/
 export interface LandingInfo {
     totalTransactions: number;
+}
+
+/*Language state*/
+export interface LanguageState {
     language: 'en' | 'it';
 }
 
@@ -20,8 +24,8 @@ export interface NewsletterState {
 /*General state*/
 export interface State {
     newsletter: NewsletterState;
+    language: LanguageState;
     landingInfo: LandingInfo;
-    device: DeviceState,
 }
 
 export interface SubscriptionPayload {

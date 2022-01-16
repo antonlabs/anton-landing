@@ -4,6 +4,7 @@ import {GlowCard} from "../../components/GlowCard/GlowCard";
 import {BezierShape} from "../../components/BezierShape/BezierShape";
 import {Footer} from "../../components/Footer/Footer";
 import {SpaceCover} from "../../components/SpaceCover/SpaceCover";
+import {t} from "../../state/language/hooks";
 
 
 export const Home = (): JSX.Element => (
@@ -11,7 +12,7 @@ export const Home = (): JSX.Element => (
         <SpaceCover />
         <div className={'gradient'}>
             <div className={'card-plain slogan mt-3em'}>
-                <h1>Who's Anton?</h1>
+                <h1>{t('Who`s Anton')}</h1>
             </div>
             <div className={'flex-row home-row'}>
                 <div className={'card-plain'}>

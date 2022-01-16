@@ -5,7 +5,7 @@ import { useDevice } from "../../state/device/hooks";
 import {Button} from "../Button/Button";
 import {AiOutlineMenu} from "react-icons/all";
 import {SubscribeButton} from "../SubscribeButton/SubscribeButton";
-import {useNewsletter} from "../../state/newsletter/hooks";
+import {LanguageButton} from "../LanguageButton/LanguageButton";
 
 export const menuBarClass = 'menu-bar';
 
@@ -29,7 +29,8 @@ export const Layout = (): JSX.Element => {
         }
     }
     const menu = <div className={'menu-items' }>
-                <SubscribeButton />
+        <SubscribeButton />
+        <LanguageButton />
     </div>
     return (
         <>
