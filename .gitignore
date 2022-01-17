@@ -19,7 +19,7 @@
 .env.production.local
 /ui-works
 .idea/
-ci/i18n/*
+ci/i18n/
 src/state/language/langs/
 ci/node_modules/
 
