@@ -28,6 +28,11 @@ function extractInFolder(path) {
 
 function writeLang(lang) {
     if(!fs.existsSync(destinationFolder+lang+'.json')) {
+        try{
+            fs.mkdirSync(destinationFolder);
+        }catch(e) {
+            console.log(e);
+        }
         fs.writeFileSync(destinationFolder+lang+'.json', '{}');
     }
     const i18n = JSON.parse(fs.readFileSync(destinationFolder+lang+'.json').toString());
