@@ -16,8 +16,11 @@ export const useLanguage = (): LanguageState => {
     return useAppSelector((state) => state.language);
 }
 
-export const t = (term: string): string => {
+export const translate = (term: string): string => {
     const lang = useLanguage().language;
-    console.log('trigger', term);
-    return getLiteral(term, languages[lang]);
+    const translation = getLiteral(term, languages[lang]);
+    if(translation) {
+        return translation;
+    }
+    return term;
 }

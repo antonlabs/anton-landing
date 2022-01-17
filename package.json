@@ -47,6 +47,8 @@
     "build:master": "NODE_ENV=production eslint --fix && mv public/index.prod.html public/index.html && env-cmd -f .env.production react-scripts build",
     "deploy:develop": "./deploy.sh develop",
     "deploy:master": "./deploy.sh prod",
+    "extract:translations": "node ci/translate-extractor.js ./ci/i18n/",
+    "poeditor:integration": "AWS_REGION=eu-west-1 node ci/poeditor-integration.js ./ci/i18n",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
