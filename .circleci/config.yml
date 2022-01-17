@@ -10,10 +10,10 @@ jobs:
       - checkout
       - run:
           name: Installing dependencies
-          command: yarn
+          command: yarn && cd ci && yarn
       - run:
           name: Building project
-          command: CI=false yarn build:${CIRCLE_BRANCH}
+          command: yarn extract-translations && yarn poeditor:integration && CI=false yarn build:${CIRCLE_BRANCH}
       - persist_to_workspace:
           root: .
           paths:

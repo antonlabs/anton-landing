@@ -80,7 +80,7 @@ const updateTerms = async () => {
 };
 
 function objectToTsConst(constName, obj) {
-    return `const ${constName}=${JSON.stringify(obj)};`;
+    return `export const ${constName}=${JSON.stringify(obj)};`;
 }
 
 

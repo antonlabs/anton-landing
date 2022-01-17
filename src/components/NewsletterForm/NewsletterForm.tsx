@@ -5,6 +5,7 @@ import './NewsletterForm.scss';
 import {useNewsletter} from "../../state/newsletter/hooks";
 import {toggleCreate} from "../../state/newsletter";
 import {useAppDispatch} from "../../state";
+import {translate} from "../../state/language/hooks";
 
 export const NewsletterForm = () => {
     const newsletter = useNewsletter();
@@ -15,8 +16,8 @@ export const NewsletterForm = () => {
         </div>
         <div className={'wallets ' + (newsletter.creating ? 'creating' : '')}>
             <div className={'title'}>
-                <h1 className={'primary'}>You need a copilot if you want to reach the moon</h1>
-                <h2 className={'subtitle'}>Choose an investment strategy and start <b>earning!</b></h2>
+                <h1 className={'primary'}>{translate('You need a copilot if you want to reach the moon')}</h1>
+                <h2 className={'subtitle'}>{translate('Choose an investment strategy and start earning!')}</h2>
             </div>
             <SubscribeButton />
         </div>
