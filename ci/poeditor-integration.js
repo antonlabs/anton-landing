@@ -22,6 +22,11 @@ const updateLocalLanguage = async (language) => {
             ...formData.getHeaders()
         }
     });
+    try{
+        fs.mkdirSync(tsFolder, {recursive: true});
+    }catch(e) {
+        console.log(e);
+    }
     console.log('Getting json file -> ', response.data);
     if(response.data.result.url) {
         const file = await axios.get(response.data.result.url, {responseType: 'stream'});
