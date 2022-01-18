@@ -48,7 +48,7 @@
     "deploy:develop": "./deploy.sh develop",
     "deploy:master": "./deploy.sh prod",
     "extract:translations": "node ci/translate-extractor.js ./ci/i18n/",
-    "poeditor:integration": "AWS_REGION=eu-west-1 AWS_SDK_LOAD_CONFIG=1 node ci/poeditor-integration.js ./ci/i18n",
+    "poeditor:integration": "AWS_REGION=eu-west-1 node ci/poeditor-integration.js ./ci/i18n",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

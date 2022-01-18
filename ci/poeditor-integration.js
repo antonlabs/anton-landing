@@ -6,6 +6,16 @@ const AWS = require('aws-sdk');
 const localeFolder = process.argv[2];
 const tsFolder = './src/state/language/langs';
 
+const config = {
+    apiVersion: "2017-10-17",
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID.replace(/\s/g, ''),
+    accessSecretKey: process.env.AWS_SECRET_ACCESS_KEY.replace(/\s/g, ''),
+    region: "eu-west-1"
+}
+
+AWS.config.update(config);
+
+
 let API_TOKEN;
 let PROJECT_ID;
 const PO_EDITOR_URL = 'https://api.poeditor.com/v2';
@@ -83,7 +93,7 @@ function objectToTsConst(constName, obj) {
 
 
 (async () => {
-    const secret = await new AWS.SecretsManager().getSecretValue({SecretId: 'arn:aws:secretsmanager:eu-west-1:682060008544:secret:poeditor-PIFC7v'}).promise();
+    const secret = await new AWS.SecretsManager(config).getSecretValue({SecretId: 'arn:aws:secretsmanager:eu-west-1:682060008544:secret:poeditor-PIFC7v'}).promise();
     const secretObj = JSON.parse(secret.SecretString);
     API_TOKEN = secretObj.api_token;
     PROJECT_ID = secretObj.project;
