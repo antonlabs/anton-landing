@@ -9,6 +9,7 @@ import {useAppDispatch} from "../../state";
 import {createNewsletter} from "../../state/newsletter";
 import {useNewsletter} from "../../state/newsletter/hooks";
 import {useGoogleReCaptcha, GoogleReCaptcha} from "react-google-recaptcha-v3";
+import {translate} from "../../state/language/hooks";
 
 
 
@@ -42,19 +43,19 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
             </Button> :
             <></>
         }
-        <h2>Keep up with news</h2>
+        <h2>{translate('Keep up with news')}</h2>
     </div>
     // const form = useForm();
     return <GenericCard header={header} style={style}>
         <form onSubmit={form.handleSubmit((val: any) => handleSubmit(val))}>
             {newsletter.error ? <div className={'alert'}>{newsletter.error}</div> : <></>}
-            <p>Subscribe to our newsletter to keep updated about our roadmap status and give us feedback about what you would like</p>
+            <p>{translate('Subscribe to our newsletter to keep updated about our roadmap status and give us feedback about what you would like')}</p>
             <div className={'flex-row mt-2em between'}>
                 <GoogleReCaptcha onVerify={t => console.log({ t })} />
-                <Input placeholder={'Your email'} register={form.register('email', {required: true})} />
+                <Input placeholder={translate('Your email')} register={form.register('email', {required: true})} />
                 <Button extraClasses={['button email']}>
                     <MdMarkEmailRead />
-                    <h6>Subscribe</h6>
+                    <h6>{translate('Subscribe')}</h6>
                 </Button>
             </div>
         </form>
