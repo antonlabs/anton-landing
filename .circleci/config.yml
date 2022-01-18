@@ -7,10 +7,12 @@ jobs:
     docker:
       - image: node:14
     steps:
+      - aws-cli/setup:
+          profile-name: default
       - checkout
       - run:
           name: Installing dependencies
-          command: yarn && cd ci && yarn
+          command: yarn && cd ci && yarn && cd ..
       - run:
           name: Building project
           command: yarn extract:translations && yarn poeditor:integration && CI=false yarn build:${CIRCLE_BRANCH}
