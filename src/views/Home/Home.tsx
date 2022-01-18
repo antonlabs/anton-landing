@@ -36,7 +36,7 @@ export const Home = (): JSX.Element => (
             <div className={'flex-row home-row'}>
                 <div className={'card-plain'}>
                     <h2>{translate('Reliable')}</h2>
-                    <h5><b>Anton</b> {translate('doesn`t sleep, it`s 24/7 scouting to never miss an opportunity.')}</h5>
+                    <h5><b>Anton</b> {translate('doesn`t sleep, it`s 24/7 scouting to never miss an opportunity')}</h5>
                 </div>
                 <div className={'image'} style={{backgroundImage: 'url("/assets/coffee.webp")'}} />
             </div>
@@ -53,8 +53,8 @@ export const Home = (): JSX.Element => (
         <div className={'units-explain'}>
             <GlowCard>
                 <h2>{translate('How much it costs reach the moon?')}</h2>
-                <p>{translate('Payment plans will be available for all kind of configuration and tailored for user needs.')}
-                    {translate('For less than a coffee per day you can have Anton by your side in your crypto journey.')}</p>
+                <p>{translate('Payment plans will be available for all kind of configuration and tailored for user needs')}
+                    {translate('For less than a coffee per day you can have Anton by your side in your crypto journey')}</p>
             </GlowCard>
         </div>
 
