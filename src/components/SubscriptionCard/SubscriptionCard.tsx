@@ -1,7 +1,7 @@
 import "./SubscriptionCard.scss";
 import {GenericCard} from "../GenericCard/GenericCard";
 import {Button} from "../Button/Button";
-import React, {useCallback, useEffect} from "react";
+import React from "react";
 import {IoIosArrowBack, MdMarkEmailRead} from "react-icons/all";
 import {useForm} from "react-hook-form";
 import {Input} from "../Input/Input";
@@ -20,7 +20,7 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
     const newsletter = useNewsletter();
     const { executeRecaptcha } = useGoogleReCaptcha();
 
-    const handleSubmit = async (data: any) => {
+    const handleSubmit = async () => {
         if (!executeRecaptcha) {
             console.log('Execute recaptcha not yet available');
             return;
@@ -47,7 +47,7 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
     </div>
     // const form = useForm();
     return <GenericCard header={header} style={style}>
-        <form onSubmit={form.handleSubmit((val: any) => handleSubmit(val))}>
+        <form onSubmit={form.handleSubmit(() => handleSubmit())}>
             {newsletter.error ? <div className={'alert'}>{newsletter.error}</div> : <></>}
             <p>{translate('Subscribe to our newsletter to keep updated about our roadmap status and give us feedback about what you would like')}</p>
             <div className={'flex-row mt-2em between'}>

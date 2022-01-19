@@ -15,7 +15,7 @@ jobs:
           command: yarn && cd ci && yarn && cd ..
       - run:
           name: Building project
-          command: yarn extract:translations && yarn poeditor:integration && CI=false yarn build:${CIRCLE_BRANCH}
+          command: yarn extract:translations && yarn poeditor:integration && yarn build:${CIRCLE_BRANCH}
       - persist_to_workspace:
           root: .
           paths:

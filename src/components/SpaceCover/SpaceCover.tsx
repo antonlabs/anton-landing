@@ -15,7 +15,7 @@ export const SpaceCover = React.memo((): JSX.Element => {
                 <NewsletterForm />
                 <div className={'moon'}>
                     <div className={'flex-row center'}>
-                        <img alt='' src={'/assets/astronaut.png'} />
+                        <img alt='' src={'/assets/astronaut.webp'} />
                     </div>
                 </div>
             </div>

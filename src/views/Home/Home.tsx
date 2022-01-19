@@ -11,6 +11,13 @@ export const Home = (): JSX.Element => (
     <div className={'home'}>
         <SpaceCover />
         <div className={'gradient'}>
+            <div className={'abstract'}>
+                <GlowCard>
+                    <h2>{translate('Abstract title')}</h2>
+                    <p>{translate('Abstract description')}</p>
+                </GlowCard>
+            </div>
+
             <div className={'card-plain slogan mt-3em'}>
                 <h1>{translate('Who`s Anton')}</h1>
             </div>
@@ -23,7 +30,6 @@ export const Home = (): JSX.Element => (
                 </div>
                 <div className={'image'} style={{backgroundImage: 'url("/assets/getting-started.webp")'}} />
             </div>
-
             <div className={'flex-row home-row reverse'}>
                 <div className={'card-plain'}>
                     <h2>{translate('Secure')}</h2>
@@ -49,7 +55,7 @@ export const Home = (): JSX.Element => (
                 <div className={'image'} style={{backgroundImage: 'url("/assets/contribute.webp")'}} />
             </div>
         </div>
-        <BezierShape color={'rgba(198, 158, 56, 1)'} style={{transform: 'scale(1, -1)'}} height={300} />
+        <BezierShape color={'rgba(198, 158, 56, 1)'} style={{transform: 'translateY(-1px) scale(1, -1)'}} height={300} />
         <div className={'units-explain'}>
             <GlowCard>
                 <h2>{translate('How much it costs reach the moon?')}</h2>

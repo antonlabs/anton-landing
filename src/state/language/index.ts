@@ -12,7 +12,7 @@ export const languageSlice = createSlice({
         setLanguage: (state: LanguageState, action: PayloadAction<string>) => {
             state.language = (languages.indexOf(action.payload) > -1 ? action.payload : 'en') as 'en' | 'it';
         },
-        toggleLanguage: (state: LanguageState, action: PayloadAction<any>) => {
+        toggleLanguage: (state: LanguageState) => {
             console.log(state.language);
             if(state.language === 'en') {
                 state.language = 'it';

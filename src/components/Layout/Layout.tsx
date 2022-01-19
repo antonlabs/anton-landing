@@ -1,4 +1,4 @@
-import {Outlet, useLocation} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import React, {CSSProperties, useState} from "react";
 import './Layout.scss';
 import { useDevice } from "../../state/device/hooks";
@@ -11,23 +11,16 @@ export const menuBarClass = 'menu-bar';
 
 
 export const Layout = (): JSX.Element => {
-    const { search, pathname } = useLocation();
-    const query = React.useMemo(() => new URLSearchParams(search), [search]);
-    const key = query.get('key');
     const [mobileMenuOpen,  setState] = useState(false);
     const device = useDevice();
-    let style: CSSProperties = {};
-
-    if(pathname === '/') {
-        style = {
+    const style: CSSProperties = {
             position: 'fixed',
             background: 'rgba(32, 32, 32, .6)',
             borderRadius: device.isMobile ? '0' : '10px',
             marginTop: device.isMobile ? '0' : '10px',
             width: device.isMobile ? '100%' : '95%',
             zIndex: '999'
-        }
-    }
+    };
     const menu = <div className={'menu-items' }>
         <SubscribeButton />
         <LanguageButton />
@@ -37,7 +30,7 @@ export const Layout = (): JSX.Element => {
             <div className={'menu-bar-container'}>
                 <div className={menuBarClass} style={style}>
                     <div className={'logobar'}>
-                        <img className={'logo'} src={'/assets/logo.svg'} />
+                        <img alt={'logo'} className={'logo'} src={'/assets/logo.svg'} />
                         <h3 className={'desktop-only'}>Anton</h3>
                     </div>
                     <nav className={'d-flex align-items-center menu ' + (mobileMenuOpen ? 'open' : '')}>

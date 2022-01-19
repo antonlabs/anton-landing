@@ -7,10 +7,10 @@ import "./LanguageButton.scss";
 
 
 export const LanguageButton = () => {
-    const language = useLanguage().language;
+    const {language} = useLanguage();
     const dispatch = useAppDispatch();
 
-    return <Button style={'icon'} onClick={() => dispatch(toggleLanguage(''))}>
+    return <Button style={'icon'} onClick={() => dispatch(toggleLanguage())}>
         <img className={'flag'} alt={language} src={'/assets/flags/'+language+'.svg'} />
     </Button>
 
