@@ -12,8 +12,6 @@ import {useGoogleReCaptcha, GoogleReCaptcha} from "react-google-recaptcha-v3";
 import {translate} from "../../state/language/hooks";
 
 
-
-
 export const SubscriptionCard = ({cancel, style = {}}: any) => {
     const dispatch = useAppDispatch();
     const form = useForm();
