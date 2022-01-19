@@ -52,7 +52,8 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
             <p>{translate('Subscribe to our newsletter to keep updated about our roadmap status and give us feedback about what you would like')}</p>
             <div className={'flex-row mt-2em between'}>
                 <GoogleReCaptcha onVerify={t => console.log({ t })} />
-                <Input placeholder={translate('Your email')} register={form.register('email', {required: true})} />
+                <Input placeholder={translate('Your email')}
+                       register={form.register('email', {required: true})} />
                 <Button extraClasses={['button email']}>
                     <MdMarkEmailRead />
                     <h6>{translate('Subscribe')}</h6>
