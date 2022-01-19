@@ -12,7 +12,6 @@ body {
 html, body {
   height: 100%;
   margin: 0;
-  font-family: 'Bai Jamjuree', sans-serif;
 }
 
 a {
@@ -162,7 +161,7 @@ a {
 
 .brand-title {
   font-size: 25px;
-  transform: translateX(-10px);
+  transform: translateX(-15px);
   color: $primary-color;
   text-transform: uppercase;
 }
