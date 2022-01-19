@@ -10,17 +10,12 @@ export const fetchTotalTransactions = createAsyncThunk<number>(
     }
 )
 
-export const languages = ['en', 'it'];
-
-
 export const landingInfoSlice = createSlice({
     name: 'landingInfo',
     initialState: {
         totalTransactions: 0
     } as LandingInfo,
     reducers: {
-        setLanguage: (state: LandingInfo, action: PayloadAction<string>) => {
-            state.language = (languages.indexOf(action.payload) > -1 ? action.payload : 'en') as 'en' | 'it';
-        }
+        setTotalTransaction: (state: LandingInfo, action: PayloadAction<number>) => {}
     }
 });

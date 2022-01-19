@@ -14,7 +14,7 @@
   .title {
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
   }
   .stack {
     flex: 3;
@@ -39,6 +39,9 @@
   transition: .3s ease all;
   left: -150%!important;
 
+  .anton-input {
+    flex: 1;
+  }
   &.creating {
     left: 50px!important;
   }
@@ -56,7 +59,9 @@
   }
 
   .subscribe {
-    width: 100%;
+    width: 95%;
+    transform: translateX(2.5%);
+    max-width: 95%;
     top: 15px;
     &.creating {
       left: 0!important;

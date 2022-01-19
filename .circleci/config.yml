@@ -8,12 +8,14 @@ jobs:
       - image: node:14
     steps:
       - checkout
+      - aws-cli/setup:
+          profile-name: default
       - run:
           name: Installing dependencies
-          command: yarn
+          command: yarn && cd ci && yarn && cd ..
       - run:
           name: Building project
-          command: CI=false yarn build:${CIRCLE_BRANCH}
+          command: yarn extract:translations && yarn poeditor:integration && yarn build:${CIRCLE_BRANCH}
       - persist_to_workspace:
           root: .
           paths:
@@ -33,7 +35,8 @@ workflows:
   version: 2
   build:
     jobs:
-      - build_project
+      - build_project:
+          context: aws-context
       - deploy_project:
           requires:
             - build_project

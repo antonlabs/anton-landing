@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {NewsletterState, SubscriptionPayload} from "../types";
 import {sendSubscription} from "./helpers";
 
@@ -18,7 +18,7 @@ export const newsletterSlice = createSlice({
         creating: false
     } as NewsletterState,
     reducers: {
-        toggleCreate: (state: NewsletterState, action: PayloadAction<void>) => {
+        toggleCreate: (state: NewsletterState) => {
             state.creating = !state.creating;
         }
     },

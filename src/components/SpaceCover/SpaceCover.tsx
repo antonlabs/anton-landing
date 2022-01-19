@@ -5,7 +5,7 @@ import {useDevice} from "../../state/device/hooks";
 import { Particles } from "../Particles/Particles";
 import {NewsletterForm} from "../NewsletterForm/NewsletterForm";
 
-export const SpaceCover = (): JSX.Element => {
+export const SpaceCover = React.memo((): JSX.Element => {
     const device = useDevice();
     return (
         <div className={'cover'}>
@@ -15,13 +15,13 @@ export const SpaceCover = (): JSX.Element => {
                 <NewsletterForm />
                 <div className={'moon'}>
                     <div className={'flex-row center'}>
-                        <img alt='' src={'/assets/astronaut.png'} />
+                        <img alt='' src={'/assets/astronaut.webp'} />
                     </div>
                 </div>
             </div>
         </div>
     );
-}
+});
 
 
 

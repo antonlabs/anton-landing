@@ -1,0 +1,19 @@
+{
+  "name": "ci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "poeditor-integration.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "\\"
+  ],
+  "author": "Paolo Di Ciaula",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1058.0",
+    "axios": "^0.24.0",
+    "form-data": "^4.0.0"
+  }
+}

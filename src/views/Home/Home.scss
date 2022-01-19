@@ -68,19 +68,23 @@ body {
 }
 
 .slogan {
-  max-width: 500px;
+  max-width: 750px;
   text-align: center;
   display: block;
   margin: 0 auto;
 }
 
-.units-explain {
-  max-width: 500px;
+.units-explain, .abstract {
+  max-width: 800px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 50px;
   span {
     color: $primary-color;
     font-weight: bold;
+  }
+  p {
+    font-size: 20px;
   }
 }
 
@@ -132,7 +136,7 @@ body {
       width: 90%;
     }
   }
-  .units-explain {
+  .units-explain, .abstract {
     max-width: none;
   }
   .prices-section {
