@@ -23,6 +23,7 @@ export const Footer = (): JSX.Element => {
             </div>
         </div>
         <div className={'credits'}>
+            <span>Copyright © Anton Labs</span>
             <a rel="noopener" href="https://www.freepik.com/vectors/logo">Logo vector created by catalyststuff - www.freepik.com</a>
         </div>
     </div>

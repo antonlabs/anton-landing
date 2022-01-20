@@ -1,6 +1,7 @@
 /*Landing state*/
 export interface LandingInfo {
     totalTransactions: number;
+    cookiesAccepted: boolean;
 }
 
 /*Language state*/
