@@ -4,8 +4,6 @@ import {toggleLanguage} from "../../state/language";
 import {useAppDispatch} from "../../state";
 import "./LanguageButton.scss";
 
-
-
 export const LanguageButton = () => {
     const {language} = useLanguage();
     const dispatch = useAppDispatch();
