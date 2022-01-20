@@ -34,7 +34,7 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
 
     style['transform'] = `scale(${newsletter.pending ? '0' : '1'})`
     form.setValue('email', '');
-    const header = <div className={'flex-row'}>
+    const header = <div className={'flex-row sub-card-header'}>
         {cancel ?
             <Button style={'icon'} onClick={cancel}>
                 <IoIosArrowBack style={{paddingRight: '10px'}} size={30} />
