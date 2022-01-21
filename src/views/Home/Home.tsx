@@ -29,7 +29,7 @@ export const Home = (): JSX.Element => {
             <div className={'flex-row home-row'}>
                 <div className={'card-plain'}>
                     <h2>{translate('Begin easily')}</h2>
-                    <h5>{translate('The easiest platform to start your crypto journey.')}<br/>
+                    <h5>{translate('The easiest platform to start your crypto journey')}.<br/>
                         {translate('It helps you trade and manage your crypto in a secure, reliable and profitable way!')}
                     </h5>
                 </div>
