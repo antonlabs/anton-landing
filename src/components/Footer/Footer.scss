@@ -5,6 +5,7 @@
   padding: 50px;
   padding-bottom: 10px;
 
+
   h3 {
     color: $primary-color;
   }
@@ -18,6 +19,10 @@
     padding-top: 25px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    span {
+      color: $primary-color;
+    }
     a {
       position: relative;
       right: 0;

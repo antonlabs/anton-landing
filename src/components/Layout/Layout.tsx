@@ -14,12 +14,13 @@ export const Layout = (): JSX.Element => {
     const [mobileMenuOpen,  setState] = useState(false);
     const device = useDevice();
     const style: CSSProperties = {
-            position: 'fixed',
-            background: 'rgba(32, 32, 32, .6)',
-            borderRadius: device.isMobile ? '0' : '10px',
-            marginTop: device.isMobile ? '0' : '10px',
-            width: device.isMobile ? '100%' : '95%',
-            zIndex: '999'
+        position: 'fixed',
+        background: 'rgba(32, 32, 32, .6)',
+        borderRadius: device.isMobile ? '0' : '10px',
+        marginTop: device.isMobile ? '0' : '10px',
+        width: device.isMobile ? '100%' : '95%',
+        zIndex: '999',
+        padding: '5px'
     };
     const menu = <div className={'menu-items' }>
         <SubscribeButton />
@@ -31,7 +32,7 @@ export const Layout = (): JSX.Element => {
                 <div className={menuBarClass} style={style}>
                     <div className={'logobar'}>
                         <img alt={'logo'} className={'logo'} src={'/assets/logo.svg'} />
-                        <h3 className={'desktop-only'}>Anton</h3>
+                        <h3 className={'brand-title'}>nton</h3>
                     </div>
                     <nav className={'d-flex align-items-center menu ' + (mobileMenuOpen ? 'open' : '')}>
                         <Button onClick={() => setState((s) => !s)} extraClasses={['toggle-menu']}>

@@ -11,7 +11,7 @@ import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 store.subscribe(() => {
     const state: State = JSON.parse(JSON.stringify(store.getState()));
-    console.log(state);
+    delete state.newsletter.error;
     localStorage.setItem('state', JSON.stringify(state))
 })
 

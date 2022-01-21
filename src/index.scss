@@ -1,12 +1,10 @@
 @import "palette";
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 
 body {
   margin: 0;
-  overflow-x:hidden;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  overflow-x: hidden;
+  font-family: 'IBM Plex Sans', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,7 +12,6 @@ body {
 html, body {
   height: 100%;
   margin: 0;
-  font-family: 'Bai Jamjuree', sans-serif;
 }
 
 a {
@@ -161,9 +158,14 @@ a {
     display: none;
   }
 }
-.desktop-only{
-  display: none;
+
+.brand-title {
+  font-size: 25px;
+  transform: translateX(-15px);
+  color: $primary-color;
+  text-transform: uppercase;
 }
+
 .mobile-only{
   display: block;
 }

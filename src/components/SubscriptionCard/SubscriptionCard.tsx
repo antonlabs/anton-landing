@@ -10,6 +10,7 @@ import {createNewsletter} from "../../state/newsletter";
 import {useNewsletter} from "../../state/newsletter/hooks";
 import {useGoogleReCaptcha, GoogleReCaptcha} from "react-google-recaptcha-v3";
 import {translate} from "../../state/language/hooks";
+import {Checkbox} from "../Checkbox/Checkbox";
 
 
 export const SubscriptionCard = ({cancel, style = {}}: any) => {
@@ -33,8 +34,7 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
     }
 
     style['transform'] = `scale(${newsletter.pending ? '0' : '1'})`
-    form.setValue('email', '');
-    const header = <div className={'flex-row'}>
+    const header = <div className={'flex-row sub-card-header'}>
         {cancel ?
             <Button style={'icon'} onClick={cancel}>
                 <IoIosArrowBack style={{paddingRight: '10px'}} size={30} />
@@ -43,16 +43,19 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
         }
         <h2>{translate('Keep up with news')}</h2>
     </div>
-    // const form = useForm();
+
     return <GenericCard header={header} style={style}>
-        <form onSubmit={form.handleSubmit(() => handleSubmit())}>
+        <form onSubmit={form.handleSubmit(() => form.formState.isValid ? handleSubmit() : () => false)}>
             {newsletter.error ? <div className={'alert'}>{newsletter.error}</div> : <></>}
             <p>{translate('Subscribe to our newsletter to keep updated about our roadmap status and give us feedback about what you would like')}</p>
-            <div className={'flex-row mt-2em between'}>
+            <Checkbox register={form.register('accept-privacy', {required: true})}
+                      href='/assets/docs/privacy-policy.pdf'
+                      placeholder={translate('Accept privacy')} />
+            <div className={'flex-row between'}>
                 <GoogleReCaptcha onVerify={t => console.log({ t })} />
                 <Input placeholder={translate('Your email')}
                        register={form.register('email', {required: true})} />
-                <Button extraClasses={['button email']}>
+                <Button extraClasses={['button email']} disabled={!form.formState.isValid}>
                     <MdMarkEmailRead />
                     <h6>{translate('Subscribe')}</h6>
                 </Button>

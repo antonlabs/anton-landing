@@ -5,11 +5,16 @@ import {translate} from "../../state/language/hooks";
 import {BezierShape} from "../../components/BezierShape/BezierShape";
 import {GlowCard} from "../../components/GlowCard/GlowCard";
 import {Footer} from "../../components/Footer/Footer";
+import {CookieBanner} from "../../components/CookieBanner/CookieBanner";
+import {useLandingInfo} from "../../state/landing-info/hooks";
 
 
-export const Home = (): JSX.Element => (
-    <div className={'home'}>
-        <SpaceCover />
+export const Home = (): JSX.Element => {
+    const landing = useLandingInfo();
+
+    return <div className={'home'}>
+        {landing.cookiesAccepted ? <></> : <CookieBanner/>}
+        <SpaceCover/>
         <div className={'gradient'}>
             <div className={'abstract'}>
                 <GlowCard>
@@ -28,7 +33,7 @@ export const Home = (): JSX.Element => (
                         {translate('It helps you trade and manage your crypto in a secure, reliable and profitable way!')}
                     </h5>
                 </div>
-                <div className={'image'} style={{backgroundImage: 'url("/assets/getting-started.webp")'}} />
+                <div className={'image'} style={{backgroundImage: 'url("/assets/getting-started.webp")'}}/>
             </div>
 
             <div className={'flex-row home-row reverse'}>
@@ -37,7 +42,7 @@ export const Home = (): JSX.Element => (
                     <h5>{translate('We never share your personal information and can`t access directly your funds, YOU are in control!')}</h5>
                 </div>
 
-                <div className={'image'} style={{backgroundImage: 'url("/assets/hero.webp")'}} />
+                <div className={'image'} style={{backgroundImage: 'url("/assets/hero.webp")'}}/>
             </div>
 
             <div className={'flex-row home-row'}>
@@ -45,7 +50,7 @@ export const Home = (): JSX.Element => (
                     <h2>{translate('Reliable')}</h2>
                     <h5><b>Anton</b> {translate('doesn`t sleep, it`s 24/7 scouting to never miss an opportunity')}</h5>
                 </div>
-                <div className={'image'} style={{backgroundImage: 'url("/assets/coffee.webp")'}} />
+                <div className={'image'} style={{backgroundImage: 'url("/assets/coffee.webp")'}}/>
             </div>
 
             <div className={'flex-row home-row reverse'}>
@@ -53,10 +58,10 @@ export const Home = (): JSX.Element => (
                     <h2>{translate('Fully customizable')}</h2>
                     <h5>{translate('Are you an expert trader? Create your own strategy and use all the tools Anton gives you!')}</h5>
                 </div>
-                <div className={'image'} style={{backgroundImage: 'url("/assets/contribute.webp")'}} />
+                <div className={'image'} style={{backgroundImage: 'url("/assets/contribute.webp")'}}/>
             </div>
         </div>
-        <BezierShape color={'rgba(198, 158, 56, 1)'} style={{transform: 'translateY(-1px) scale(1, -1)'}} height={300} />
+        <BezierShape color={'rgba(198, 158, 56, 1)'} style={{transform: 'translateY(-1px) scale(1, -1)'}} height={300}/>
         <div className={'units-explain'}>
             <GlowCard>
                 <h2>{translate('How much it costs reach the moon?')}</h2>
@@ -66,9 +71,9 @@ export const Home = (): JSX.Element => (
         </div>
 
         <div className={'prices-section'}></div>
-        <Footer />
+        <Footer/>
     </div>
-);
+};
 
 
 export default Home;

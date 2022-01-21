@@ -1,6 +1,5 @@
 .wallets, .subscribe {
   left: 50px;
-  margin-right: 50px;
   text-align: left;
   color: #fff;
   height: 80vh;
@@ -36,6 +35,8 @@
 }
 
 .subscribe {
+  overflow: hidden;
+  padding: 0;
   transition: .3s ease all;
   left: -150%!important;
 
@@ -63,6 +64,9 @@
     transform: translateX(2.5%);
     max-width: 95%;
     top: 15px;
+    .anton-input {
+      max-width: 80%;
+    }
     &.creating {
       left: 0!important;
     }

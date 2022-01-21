@@ -13,9 +13,16 @@ export const fetchTotalTransactions = createAsyncThunk<number>(
 export const landingInfoSlice = createSlice({
     name: 'landingInfo',
     initialState: {
-        totalTransactions: 0
+        totalTransactions: 0,
+        cookiesAccepted: false
     } as LandingInfo,
     reducers: {
-        setTotalTransaction: (state: LandingInfo, action: PayloadAction<number>) => {}
+        setCookiesAccepted: (state: LandingInfo, action: PayloadAction<boolean>) => {
+            state.cookiesAccepted = action.payload;
+        }
     }
 });
+
+
+export const landingInfoReducer = landingInfoSlice.reducer;
+export const {setCookiesAccepted} = landingInfoSlice.actions;
