@@ -7,6 +7,22 @@ import store from './state';
 import {State} from "./state/types";
 import ReactDOM from 'react-dom';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+
+const firebaseConfig = {
+    apiKey: "AIzaSyB55QAbfc2f7auyvXH7ny85mNUpBqkATao",
+    authDomain: "anton-landing.firebaseapp.com",
+    projectId: "anton-landing",
+    storageBucket: "anton-landing.appspot.com",
+    messagingSenderId: "419306989754",
+    appId: "1:419306989754:web:636ae7d34df0513c313a83",
+    measurementId: "G-HLF8VLJ242"
+};
+
+const app = initializeApp(firebaseConfig);
+getAnalytics(app);
 
 
 store.subscribe(() => {

@@ -52,7 +52,7 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
                       href='/assets/docs/privacy-policy.pdf'
                       placeholder={translate('Accept privacy')} />
             <div className={'flex-row between'}>
-                <GoogleReCaptcha onVerify={t => console.log({ t })} />
+                <GoogleReCaptcha onVerify={() => console.log('verified')} />
                 <Input placeholder={translate('Your email')}
                        register={form.register('email', {required: true})} />
                 <Button extraClasses={['button email']} disabled={!form.formState.isValid}>
