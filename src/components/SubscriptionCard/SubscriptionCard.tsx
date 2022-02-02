@@ -56,7 +56,7 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
                 <GoogleReCaptcha onVerify={t => console.log({ t })} />
                 <Input placeholder={translate('Your email')}
                        register={form.register('email')} />
-                <Button extraClasses={['button email']} disabled={!form.formState.isValid}>
+                <Button extraClasses={['button email']}>
                     <MdMarkEmailRead />
                     <h6>{translate('Subscribe')}</h6>
                 </Button>
