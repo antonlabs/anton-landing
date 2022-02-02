@@ -26,11 +26,12 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
         }
 
         const token = await executeRecaptcha('newsletter_subscription');
-
-        dispatch(createNewsletter({
-            email: form.getValues().email,
-            captchaCode: token
-        }));
+        if(form.getValues().email) {
+            dispatch(createNewsletter({
+                email: form.getValues().email,
+                captchaCode: token
+            }));
+        }
     }
 
     style['transform'] = `scale(${newsletter.pending ? '0' : '1'})`
@@ -54,7 +55,7 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
             <div className={'flex-row between'}>
                 <GoogleReCaptcha onVerify={t => console.log({ t })} />
                 <Input placeholder={translate('Your email')}
-                       register={form.register('email', {required: true})} />
+                       register={form.register('email')} />
                 <Button extraClasses={['button email']} disabled={!form.formState.isValid}>
                     <MdMarkEmailRead />
                     <h6>{translate('Subscribe')}</h6>
