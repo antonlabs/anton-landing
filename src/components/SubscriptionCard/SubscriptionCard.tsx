@@ -24,8 +24,8 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
             console.log('Execute recaptcha not yet available');
             return;
         }
-
         const token = await executeRecaptcha('newsletter_subscription');
+        console.log(form.getValues().email);
         if(form.getValues().email) {
             dispatch(createNewsletter({
                 email: form.getValues().email,
@@ -46,7 +46,7 @@ export const SubscriptionCard = ({cancel, style = {}}: any) => {
     </div>
 
     return <GenericCard header={header} style={style}>
-        <form onSubmit={form.handleSubmit(() => form.formState.isValid ? handleSubmit() : () => false)}>
+        <form onSubmit={form.handleSubmit(() => handleSubmit())}>
             {newsletter.error ? <div className={'alert'}>{newsletter.error}</div> : <></>}
             <p>{translate('Subscribe to our newsletter to keep updated about our roadmap status and give us feedback about what you would like')}</p>
             <Checkbox register={form.register('accept-privacy', {required: true})}
